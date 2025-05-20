@@ -38,8 +38,6 @@ public class RegisterPageSteps {
     @And("Signup_Login page is displayed")
     public void signupLoginPageIsDisplayed() {
         assertTrue(registerPage.isRegisterPageVisible(), "Register page is not visible");
-        ;
-
     }
 
     @And("User enters registration details and clicks [Signup] Button")
@@ -49,8 +47,8 @@ public class RegisterPageSteps {
         String email = data.get(0).get("email");
         scenarioContext.set(ContextKey.USERNAME,userName);
         scenarioContext.set(ContextKey.EMAIL,email);
-
-        registerPage.signup(userName, email);
+        System.out.println("Available keys: " + data.get(0).keySet());
+        registerPage.signup(userName,email);
 
     }
 

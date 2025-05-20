@@ -3,9 +3,14 @@ package com.myWork.Assessment.tests.pages;
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 import com.myWork.Assessment.tests.hooks.CommonBase;
+import com.myWork.Assessment.tests.utils.ContextKey;
+import com.myWork.Assessment.tests.utils.ScenarioContext;
 import lombok.Data;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.List;
+import java.util.Map;
 
 import static org.testng.Assert.assertTrue;
 
@@ -22,6 +27,8 @@ public class RegisterPage {
     private final Locator errorMessage;
 
     private static final Logger logger = LoggerFactory.getLogger(RegisterPage.class);
+    ScenarioContext scenarioContext = ScenarioContext.getInstance();
+
     public RegisterPage(Page page) {
         this.page = page;
         this.signupName = page.locator("[data-qa='signup-name']");
@@ -43,7 +50,6 @@ public class RegisterPage {
         }
     }
 
-
     public void login(String email, String password) {
 
         logger.debug(" email '{}' and password '{}' were filled in and login button was clicked", email,password);
@@ -53,18 +59,17 @@ public class RegisterPage {
         loginButton.click();
 
     }
-
     public void signup(String userName, String email) {
 
+        this.signupName.fill(userName);
+        this.signupEmail.fill(email);
+        System.out.println("Signup name: " + userName);
+        System.out.println("Signup email: " + email);
         logger.debug(" Name '{}' and Email '{}' were filled in and sighup button was clicked",userName,email);
         if (userName == null || email == null || userName.isEmpty() || email.isEmpty()) {
 
             throw new RuntimeException("Signup Name or Email is null or empty!");
         }
-        this.signupName.fill(userName);
-        this.signupEmail.fill(email);
-        System.out.println("Signup name: " + userName);
-        System.out.println("Signup email: " + email);
         signupButton.click();
 
     }

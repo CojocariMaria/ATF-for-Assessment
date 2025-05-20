@@ -1,11 +1,17 @@
 package com.myWork.Assessment.tests.utils;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.HashMap;
 import java.util.Map;
 
 public class ScenarioContext {
     private static ScenarioContext instance;
     private final Map<ContextKey, Object> contextData;
+    @Getter
+    @Setter
+    private String scenarioName;
 
     private ScenarioContext() {
         contextData = new HashMap<>();

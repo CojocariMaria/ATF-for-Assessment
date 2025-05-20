@@ -10,8 +10,8 @@ import org.junit.runner.RunWith;
         plugin = {"pretty", "summary"},
         features = "src/test/resources/features",
         glue = "com.myWork.Assessment.tests",
-        monochrome = true,
-        tags = "@only"
+        monochrome = true
+        //tags = "@only"
 )
 
 public class RunCucumberTest {

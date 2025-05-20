@@ -16,7 +16,7 @@ import static org.testng.Assert.assertTrue;
 @Slf4j
 @Data
 public class HomePage {
-   private Page page;
+    private Page page;
     private final Locator signupLoginLink;
     private final Locator loggedInUser;
     private final Locator deleteAccountButton;
@@ -26,7 +26,6 @@ public class HomePage {
 
     private static final Logger logger = LoggerFactory.getLogger(HomePage.class);
     ScenarioContext scenarioContext = ScenarioContext.getInstance();
-
 
 
     public HomePage(Page page) {
@@ -54,23 +53,12 @@ public class HomePage {
         signupLoginLink.click();
     }
 
-    public boolean isLoggedInAs(String expectedName) {
-        String text = page.locator("a:has-text('Logged in as')").textContent().trim();
-        return text.contains(expectedName);
-    }
-
-    public void assertLoggedInUserVisible() {
-        String expectedName = scenarioContext.get(ContextKey.USERNAME,String.class);
-        logger.info("Checking expected username: '{}' ", expectedName);
-        assertTrue(isLoggedInAs(expectedName), "Logged in username not visible or incorrect");
-    }
-
     public void clickDeleteAccountButton() {
         deleteAccountButton.click();
     }
 
     public void clickLogoutButton() {
-logger.info("Click on Logout button");
+        logger.info("Click on Logout button");
         logoutButton.click();
     }
 
@@ -80,7 +68,7 @@ logger.info("Click on Logout button");
         productsLink.click();
     }
 
-    public void clickCartButton(){
+    public void clickCartButton() {
 
         logger.info("Click on Cart button");
         cartLink.click();

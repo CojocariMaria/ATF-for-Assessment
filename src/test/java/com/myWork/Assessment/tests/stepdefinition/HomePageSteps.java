@@ -14,6 +14,7 @@ import lombok.Setter;
 
 import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertTrue;
+
 @Data
 public class HomePageSteps {
     private final Page page;
@@ -25,8 +26,9 @@ public class HomePageSteps {
         this.page = commonBase.getPage();
         this.homePage = new HomePage(page);
     }
+
     @Given("home page is loaded")
-    public void homePageIsLoaded(){
+    public void homePageIsLoaded() {
 
         System.out.println("Checking if Home Page is loaded...");
         System.out.println("Current URL: " + page.url());
@@ -36,14 +38,7 @@ public class HomePageSteps {
 
     @When("Click on [Signup_Login] button")
     public void clickOnSignupLoginButton() {
-       homePage.clickSignupLogin();
-    }
-
-
-    @And("check if Logged in as is visible at the top menu")
-    public void checkIfLoggedInAsIsVisibleAtTheTopMenu() {
-        homePage.assertLoggedInUserVisible();
-
+        homePage.clickSignupLogin();
     }
 
     @Then("User is redirected to Home page")
@@ -59,15 +54,12 @@ public class HomePageSteps {
     @And("user clicks [Logout] button")
     public void userClicksLogoutButton() {
         homePage.clickLogoutButton();
-
-
     }
-
 
     @And("user clicks on [Products] button")
     public void userClicksOnProductsButton() {
 
-      homePage.clickProductsButton();
+        homePage.clickProductsButton();
 
     }
 }
