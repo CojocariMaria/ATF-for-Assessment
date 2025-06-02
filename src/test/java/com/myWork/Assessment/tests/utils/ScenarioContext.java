@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ScenarioContext {
-    private static ScenarioContext instance;
+    private static ScenarioContext scenarioContext;
     private final Map<ContextKey, Object> contextData;
     @Getter
     @Setter
@@ -18,10 +18,10 @@ public class ScenarioContext {
     }
 
     public static ScenarioContext getInstance() {
-        if (instance == null) {
-            instance = new ScenarioContext();
+        if (scenarioContext == null) {
+            scenarioContext = new ScenarioContext();
         }
-        return instance;
+        return scenarioContext;
     }
 
     public void set(ContextKey key, Object value) {
@@ -31,11 +31,6 @@ public class ScenarioContext {
         return className.cast(contextData.get(key));
     }
 
-    public boolean contains(ContextKey key) {
-        return contextData.containsKey(key);
-    }
-
     public void clear() {
-        contextData.clear();
+        contextData.clear();}
     }
-}

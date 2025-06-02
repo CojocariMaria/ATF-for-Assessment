@@ -1,8 +1,9 @@
+@ui
 Feature: Product catalog and cart interactions
 
 
   Scenario: Verify All Products and product detail page
-    Given home page is loaded
+    Given home page is displayed
     And user clicks on [Products] button
     And products page is displayed successfully
     When user clicks on View Product of first product
@@ -10,7 +11,7 @@ Feature: Product catalog and cart interactions
     And product information is visible
 
   Scenario: Add product in Cart
-    Given home page is loaded
+    Given home page is displayed
     And user clicks on [Products] button
     And products page is displayed successfully
     And user navigates the product and clicks [Add to cart] button

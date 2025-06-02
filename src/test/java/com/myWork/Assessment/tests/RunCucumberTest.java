@@ -11,7 +11,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue = "com.myWork.Assessment.tests",
         monochrome = true
-        //tags = "@only"
+        //tags = "@ui"
 )
 
 public class RunCucumberTest {

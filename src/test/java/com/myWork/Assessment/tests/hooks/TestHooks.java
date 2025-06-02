@@ -11,23 +11,19 @@ import org.slf4j.LoggerFactory;
 public class TestHooks {
 
     private static final Logger logger = LoggerFactory.getLogger(TestHooks.class);
-    ScenarioContext scenarioContext = ScenarioContext.getInstance();
-
-
 
     public TestHooks() {
     }
-    @Before
+    @Before (value = "@ui")
     public void setup(Scenario scenario){
         logger.info(">> Launching Playwright...");
         PlaywrightFactory.setup();
         Page page = PlaywrightFactory.getPage();
         ScenarioContext.getInstance().setScenarioName(scenario.getName());
         logger.info("[HOOK] Starting scenario: {}", scenario.getName());
-
     }
 
-    @After
+    @After (value = "@ui")
     public void tearDown(Scenario scenario){
 
         PlaywrightFactory.tearDown();
