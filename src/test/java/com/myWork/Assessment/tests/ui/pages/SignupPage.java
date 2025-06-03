@@ -17,7 +17,6 @@ import static org.testng.Assert.assertTrue;
 @Data
 public class SignupPage {
     private final Page page;
-    private CommonBase commonBase;
     private static final Logger logger = LoggerFactory.getLogger(SignupPage.class);
     ScenarioContext scenarioContext =ScenarioContext.getInstance();
 
@@ -28,7 +27,7 @@ public class SignupPage {
 
     public boolean isSignupPageVisible() {
         logger.info("Checking if Signup Page is loaded...");
-        logger.info("Current URL: " + page.url());
+        logger.info("Current URL: {}", page.url());
         try {
             return page.locator("[id='form']").isVisible();
         } catch (Exception e) {
@@ -48,7 +47,7 @@ public class SignupPage {
             throw new RuntimeException("Password is missing in DataTable!");
         }
         page.locator("#password").fill(password);
-        logger.debug("Password was filled in in the field");
+        logger.debug("Password ********* was filled in in the field");
     }
 
     public void SelectDateOfBirth(Map<String, String> data) {
@@ -68,12 +67,12 @@ public class SignupPage {
     }
 
     public void selectNewsletter() {
-        logger.info("Newsletter checkbox was checked");
+        logger.info("Checkbox 'Newsletter' was checked");
         page.locator("#newsletter").check();
     }
 
     public void selectOffers() {
-        logger.info("Checkbox Offers was selected");
+        logger.info("Checkbox 'Offers' was selected");
         page.locator("#optin").check();
     }
 
@@ -108,7 +107,7 @@ public class SignupPage {
     }
 
     public void createAccountButton() {
-        logger.info("User clicks on Create Account button");
+        logger.info("User clicks on [Create Account] button");
         page.locator("[data-qa ='create-account']").click();
     }
 }

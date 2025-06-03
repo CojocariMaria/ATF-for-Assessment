@@ -73,11 +73,11 @@
             <version>1.18.32</version>
             <scope>provided</scope>
         </dependency>
-            <dependency>
-                <groupId>com.microsoft.playwright</groupId>
-                <artifactId>playwright</artifactId>
-                <version>1.43.0</version> <!-- актуальная версия -->
-            </dependency>
+        <dependency>
+            <groupId>com.microsoft.playwright</groupId>
+            <artifactId>playwright</artifactId>
+            <version>1.43.0</version> <!-- актуальная версия -->
+        </dependency>
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-picocontainer</artifactId>
@@ -106,7 +106,25 @@
             <version>2.4.2</version>
         </dependency>
 
-        </dependencies>
+    </dependencies>
 
-
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.5.0</version>
+                <configuration>
+                    <source>17</source>
+                    <encoding>UTF-8</encoding>
+                    <docencoding>UTF-8</docencoding>
+                    <charset>UTF-8</charset>
+                    <show>protected</show>
+                    <failOnError>false</failOnError>
+                    <sourcepath>${project.basedir}/src/test/java</sourcepath>
+                    <subpackages>com.myWork.Assessment.tests</subpackages>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>

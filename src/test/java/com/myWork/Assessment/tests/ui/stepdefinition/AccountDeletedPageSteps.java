@@ -10,18 +10,18 @@ import static org.testng.Assert.assertTrue;
 
 public class AccountDeletedPageSteps {
 
-   private final Page page;
-   private CommonBase commonBase;
-   private AccountDeletedPage accountDeletedPage;
+    private CommonBase commonBase;
+    private AccountDeletedPage accountDeletedPage;
 
-   public AccountDeletedPageSteps(CommonBase commonBase){
-        this.page = commonBase.getPage();
+    public AccountDeletedPageSteps(CommonBase commonBase) {
+        Page page = commonBase.getPage();
         this.accountDeletedPage = new AccountDeletedPage(page);
-       }
+    }
 
     @And("check that 'ACCOUNT DELETED!' is visible")
     public void checkAccountDeletedIsVisible() {
-       accountDeletedPage.checkAccountDeletedMessage();
+        assertTrue(accountDeletedPage.isAccountDeletedPageVisible(), "Header not visible");
+        accountDeletedPage.checkAccountDeletedMessage();
 
     }
 

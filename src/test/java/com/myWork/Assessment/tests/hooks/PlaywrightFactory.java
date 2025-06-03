@@ -7,7 +7,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.nio.file.Paths;
-
+/**
+ * A factory class for setting up and managing the Playwright browser, context, and page instances.
+ * <p>
+ * Reads configuration from {@link ConfigLoader}, supports multiple browser types (Chromium, Firefox, WebKit),
+ * and provides access to a shared {@link Page} object.
+ */
 
 public class PlaywrightFactory {
 
@@ -20,6 +25,15 @@ public class PlaywrightFactory {
     @Getter
     private static Page page;
 
+
+    /**
+     * Initializes Playwright, launches the browser (based on configuration), creates a context and page,
+     * and navigates to the configured base URL.
+     * <p>
+     * Supported browsers: <b>chromium</b>, <b>firefox</b>, <b>webkit</b>.
+     * <p>
+     * Chrome executable path is hardcoded and used by default if "chromium" is selected.
+     */
     public static void setup() {
         logger.debug("Setting up Playwright and browser...");
         playwright = Playwright.create();
@@ -50,12 +64,17 @@ public class PlaywrightFactory {
         page = browserContext.newPage();
 
         page.navigate(url);
-        logger.info("Navigated to: " + url);
+        logger.debug("Navigated to: {} ", url);
     }
 
+    /**
+     * Closes the browser context, browser instance, and the Playwright process.
+     * <p>
+     * Should be called after test execution to release resources.
+     */
     public static void tearDown() {
 
-        logger.info("Closing browser...");
+        logger.debug("Closing browser...");
         if (browserContext != null) {
             browserContext.close();
         }

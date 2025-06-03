@@ -12,7 +12,6 @@ import static org.testng.Assert.assertTrue;
 @Data
 public class RegisterPage {
     private Page page;
-    private CommonBase commonBase;
     private final Locator signupName;
     private final Locator signupEmail;
     private final Locator signupButton;
@@ -37,7 +36,7 @@ public class RegisterPage {
 
     public boolean isRegisterPageVisible() {
         logger.info("Checking if Register Page is loaded...");
-        logger.info("Current URL: {}" , page.url());
+        logger.info("Current URL: {}", page.url());
         try {
             return page.locator("[id='form']").isVisible();
         } catch (Exception e) {
@@ -48,18 +47,19 @@ public class RegisterPage {
     public void login(String email, String password) {
 
         this.email.fill(email);
-        logger.debug("Fill randomly generated email: {}",email);
+        logger.debug("Fill randomly generated email: {}", email);
         this.password.fill(password);
-        logger.debug("Fill random password: {}",password);
+        logger.debug("Fill random password: {}", password);
         loginButton.click();
-        logger.debug("Click on [Login] button");
+        logger.info("Click on [Login] button");
 
     }
+
     public void signup(String userName, String email) {
 
         this.signupName.fill(userName);
         this.signupEmail.fill(email);
-        logger.debug(" Name '{}' and Email '{}' were filled in and sighup button was clicked",userName,email);
+        logger.debug(" Name '{}' and Email '{}' were filled in and sighup button was clicked", userName, email);
         if (userName == null || email == null || userName.isEmpty() || email.isEmpty()) {
 
             throw new RuntimeException("Signup Name or Email is null or empty!");
@@ -69,22 +69,27 @@ public class RegisterPage {
     }
 
     public boolean isLoginErrorVisible() {
+
+        String errorMessage = "p:has-text('Your email or password is incorrect!')";
+
         try {
-            page.waitForSelector("p:has-text('Your email or password is incorrect!')",
-                    new Page.WaitForSelectorOptions().setTimeout(3000));
-            return page.locator("p:has-text('Your email or password is incorrect!')").isVisible();
+            logger.debug("Waiting for the login error message to appear...");
+            page.waitForSelector(errorMessage, new Page.WaitForSelectorOptions().setTimeout(3000));
+
+            boolean visible = page.locator(errorMessage).isVisible();
+            logger.debug("The login error message is displayed: {}", visible);
+            return visible;
+
         } catch (Exception e) {
-            logger.error("Login error not found: {} ", e.getMessage());
+            logger.warn(" Login error message not found: {}", e.getMessage());
             return false;
         }
     }
 
     public String getLoginErrorText() {
-
-
-        logger.debug("Error message {} is displayed ",errorMessage);
-        return errorMessage.textContent().trim();
-
+        String text = errorMessage.textContent().trim();
+        logger.debug("Error message is displayed: '{}'", text);
+        return text;
 
     }
 

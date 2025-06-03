@@ -8,14 +8,12 @@ import org.slf4j.LoggerFactory;
 
 public class AccountDeletedPage {
     private Page page;
-    private CommonBase commonBase;
-    private final Locator continueButton;
 
 
     private static final Logger logger = LoggerFactory.getLogger(AccountDeletedPage.class);
     public AccountDeletedPage(Page page){
         this.page= page;
-        this.continueButton = page.locator("[data-qa='continue-button']");
+        //Locator continueButton = page.locator("[data-qa='continue-button']");
     }
 
     public boolean isAccountDeletedPageVisible(){

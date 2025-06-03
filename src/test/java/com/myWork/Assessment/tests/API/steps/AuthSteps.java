@@ -52,18 +52,18 @@ public class AuthSteps {
         createUser.setZipcode(faker.address().zipCode());
         createUser.setMobileNumber(faker.phoneNumber().phoneNumber());
 
-        logger.info("Name: {}, Email: {}, Title: {}", createUser.getName(), createUser.getEmail(), createUser.getTitle());
-        logger.info("Password: ********** (hidden for security)");
-        logger.info("Birth date: {}-{}-{}", createUser.getBirthDay(), createUser.getBirthMonth(), createUser.getBirthYear());
-        logger.info("Full Name: {} {}, Company: {}", createUser.getFirstName(), createUser.getLastName(), createUser.getCompany());
-        logger.info("Address: {}, {}, {}, {}, {}, {}",
+        logger.debug("Name: {}, Email: {}, Title: {}", createUser.getName(), createUser.getEmail(), createUser.getTitle());
+        logger.debug("Password: ********** (hidden for security)");
+        logger.debug("Birth date: {}-{}-{}", createUser.getBirthDay(), createUser.getBirthMonth(), createUser.getBirthYear());
+        logger.debug("Full Name: {} {}, Company: {}", createUser.getFirstName(), createUser.getLastName(), createUser.getCompany());
+        logger.debug("Address: {}, {}, {}, {}, {}, {}",
                 createUser.getAddress1(),
                 createUser.getAddress2(),
                 createUser.getCountry(),
                 createUser.getState(),
                 createUser.getCity(),
                 createUser.getZipcode());
-        logger.info(" Mobile number: {}", createUser.getMobileNumber());
+        logger.debug(" Mobile number: {}", createUser.getMobileNumber());
 
     }
 
@@ -76,13 +76,14 @@ public class AuthSteps {
     @Then("HTTP status code is {int}")
     public void httpStatusCodeIs(int expectedHttpStatusCode) {
         assertEquals(response.getStatusCode(), expectedHttpStatusCode);
+        logger.debug("http status code is {}", response.getStatusCode());
 
     }
 
     @Then("response code is {int}")
     public void responseStatusCodeIs(int expectedCode) {
         int actual = response.jsonPath().getInt("responseCode");
-        logger.info("API responseCode (from JSON): {}", actual);
+        logger.debug("API responseCode (from JSON): {}", actual);
         assertEquals(expectedCode,actual, "Mismatch in API response code inside JSON body");
 
     }
@@ -90,7 +91,7 @@ public class AuthSteps {
     @And("response contains {string}")
     public void responseContains(String expectedMessage) {
         String responseBody = response.getBody().asString();
-        logger.info("Response body:\n{}", responseBody);
+        logger.debug("Response body:\n{}", responseBody);
         assertTrue(responseBody.contains(expectedMessage),"Response body does not contain expected text!"
                );
 

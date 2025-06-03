@@ -7,6 +7,8 @@ import com.myWork.Assessment.tests.ui.pages.ProductsPage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.When;
 import lombok.Data;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import static org.testng.Assert.assertTrue;
 
@@ -16,7 +18,7 @@ public class ProductsPageSteps {
     private ProductsPage productsPage;
     private CommonBase commonBase;
     private HomePage homePage;
-
+    
     public ProductsPageSteps(CommonBase commonBase) {
         this.page = commonBase.getPage();
         this.productsPage = new ProductsPage(page);
@@ -27,8 +29,6 @@ public class ProductsPageSteps {
 
     @And("products page is displayed successfully")
     public void productsPageIsDisplayedSuccessfully() {
-        System.out.println("Checking if Products Page is loaded...");
-        System.out.println("Current URL: " + page.url());
         assertTrue(productsPage.isProductsPageVisible(), "Products page is not visible");
 
     }

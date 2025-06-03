@@ -13,7 +13,8 @@ public class ProductDetailsPage {
     private final Locator productInformation;
 
     private static final Logger logger = LoggerFactory.getLogger(ProductDetailsPage.class);
-    public ProductDetailsPage(Page page){
+
+    public ProductDetailsPage(Page page) {
         this.page = page;
         this.productInformation = page.locator("div.product-information");
     }
@@ -29,15 +30,21 @@ public class ProductDetailsPage {
     }
 
     public Map<String, String> getProductDetails() {
+        logger.info("Extraction of product details has begun...");
         Map<String, String> details = new HashMap<>();
+        try {
+            details.put("name", productInformation.locator("h2").textContent().trim());
+            details.put("category", productInformation.locator("p:has-text('Category')").textContent().replace("Category:", "").trim());
+            details.put("price", productInformation.locator("span:has-text('Rs.')").first().textContent().trim());
+            details.put("quantity", productInformation.locator("label:has-text('Quantity:')").textContent().trim());
+            details.put("availability", productInformation.locator("p:has-text('Availability')").textContent().replace("Availability:", "").trim());
+            details.put("condition", productInformation.locator("p:has-text('Condition')").textContent().replace("Condition:", "").trim());
+            details.put("brand", productInformation.locator("p:has-text('Brand')").textContent().replace("Brand:", "").trim());
+            logger.debug("Product details: {}", details);
+        } catch (Exception e) {
 
-        details.put("name", productInformation.locator("h2").textContent().trim());
-        details.put("category", productInformation.locator("p:has-text('Category')").textContent().replace("Category:", "").trim());
-        details.put("price", productInformation.locator("span:has-text('Rs.')").first().textContent().trim());
-        details.put("quantity",productInformation.locator("label:has-text('Quantity:')").textContent().trim());
-        details.put("availability", productInformation.locator("p:has-text('Availability')").textContent().replace("Availability:", "").trim());
-        details.put("condition", productInformation.locator("p:has-text('Condition')").textContent().replace("Condition:", "").trim());
-        details.put("brand", productInformation.locator("p:has-text('Brand')").textContent().replace("Brand:", "").trim());
+            logger.error(" Error when extracting product details: {}", e.getMessage());
+        }
 
         return details;
     }

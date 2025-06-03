@@ -25,7 +25,6 @@ public class SignupPageSteps {
 
     private static Faker faker = new Faker();
     ScenarioContext scenarioContext = ScenarioContext.getInstance();
-    private static final Logger logger = LoggerFactory.getLogger(SignupPageSteps.class);
 
     public SignupPageSteps(CommonBase commonBase) {
         this.page = commonBase.getPage();
@@ -34,7 +33,6 @@ public class SignupPageSteps {
 
     @And("Check that signup page is visible")
     public void checkThatSignupPageIsVisible() {
-        logger.info("Signup page is visible");
         assertTrue(signupPage.isSignupPageVisible(), "Signup page is not visible");
 
     }
@@ -51,7 +49,6 @@ public class SignupPageSteps {
 
         signupPage.selectRandomTitle();
         Map<String, String> data = dataTable.asMap(String.class, String.class);
-        logger.info("User selected date of birth");
         signupPage.SelectDateOfBirth(data);
         signupPage.selectNewsletter();
         signupPage.selectOffers();

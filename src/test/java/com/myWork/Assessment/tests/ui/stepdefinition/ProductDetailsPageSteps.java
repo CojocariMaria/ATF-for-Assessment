@@ -10,7 +10,7 @@ import java.util.Map;
 
 public class ProductDetailsPageSteps {
     private Page page;
-    private ProductDetailsPage productDetailsPage;
+    private final ProductDetailsPage productDetailsPage;
     CommonBase commonBase;
 
     public ProductDetailsPageSteps(CommonBase commonBase){

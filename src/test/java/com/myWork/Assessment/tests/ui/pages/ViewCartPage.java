@@ -13,19 +13,19 @@ import static org.testng.Assert.assertTrue;
 @Data
 public class ViewCartPage {
     private Page page;
-    private Locator product1;
+    private Locator product;
 
     private static final Logger logger = LoggerFactory.getLogger(ViewCartPage.class);
 
     public ViewCartPage(Page page) {
         this.page = page;
-        this.product1 = page.locator("id='product-1'");
+        this.product = page.locator("id='product-1'");
 
     }
 
     public boolean isViewCartPageDisplayed() {
         logger.info("Checking if View_Cart Page is loaded...");
-        logger.info("Current URL: " + page.url());
+        logger.info("Current URL: {}", page.url());
         try {
             return page.locator("[id='cart_info']").isVisible();
         } catch (Exception e) {

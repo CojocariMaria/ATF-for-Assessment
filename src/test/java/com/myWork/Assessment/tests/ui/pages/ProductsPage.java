@@ -12,7 +12,7 @@ public class ProductsPage {
     private final Locator firstProduct;
     private final Locator continueShoppingButton;
 
-private static final Logger logger = LoggerFactory.getLogger(ProductsPage.class);
+    private static final Logger logger = LoggerFactory.getLogger(ProductsPage.class);
 
     public ProductsPage(Page page) {
         this.page = page;
@@ -24,7 +24,7 @@ private static final Logger logger = LoggerFactory.getLogger(ProductsPage.class)
 
     public boolean isProductsPageVisible() {
         logger.info("Checking if Products Page is loaded...");
-        logger.info("Current URL: " + page.url());
+        logger.debug("Current URL: {}", page.url());
         try {
             return page.locator("h2.title:has-text('All Products')").isVisible();
         } catch (Exception e) {
@@ -35,11 +35,12 @@ private static final Logger logger = LoggerFactory.getLogger(ProductsPage.class)
 
     public void clickOnViewProduct() {
         firstProduct.click();
+        logger.info("Product was selected");
     }
 
 
     public void clickAddToCartById(int index) {
-        logger.debug("Adding product to the cart");
+        logger.info("Adding product to the cart");
         Locator productCard = page.locator(".product-image-wrapper").nth(index);
         productCard.hover();
         productCard.waitFor();
@@ -48,10 +49,9 @@ private static final Logger logger = LoggerFactory.getLogger(ProductsPage.class)
     }
 
 
-    public void clickContinueShoppingButton(){
-        logger.info("Continue shopping link is clicking");
+    public void clickContinueShoppingButton() {
+        logger.info("Continue shopping link is clicked");
         continueShoppingButton.click();
-
     }
 
 

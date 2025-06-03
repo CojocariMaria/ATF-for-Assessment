@@ -5,31 +5,54 @@ import com.myWork.Assessment.tests.utils.ScenarioContext;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * Cucumber hook class responsible for setting up and tearing down Playwright before and after UI scenarios.
+ * <p>
+ * The {@code @Before} and {@code @After} methods are scoped to scenarios tagged with <b>@ui</b>.
+ * <p>
+ * Stores scenario metadata in {@link ScenarioContext} and manages Playwright lifecycle via {@link PlaywrightFactory}.
+ */
+@Slf4j
 public class TestHooks {
 
-    private static final Logger logger = LoggerFactory.getLogger(TestHooks.class);
-
+    /**
+     * Default constructor. Required by Cucumber for hook instantiation.
+     */
     public TestHooks() {
     }
-    @Before (value = "@ui")
-    public void setup(Scenario scenario){
-        logger.info(">> Launching Playwright...");
+
+    /**
+     * Executed before each scenario tagged with {@code @ui}.
+     * <p>
+     * Initializes Playwright and stores the current scenario name in the {@link ScenarioContext}.
+     *
+     * @param scenario the Cucumber scenario object
+     */
+    @Before(value = "@ui")
+    public void setup(Scenario scenario) {
+        log.debug("Launching Playwright...");
         PlaywrightFactory.setup();
-        Page page = PlaywrightFactory.getPage();
         ScenarioContext.getInstance().setScenarioName(scenario.getName());
-        logger.info("[HOOK] Starting scenario: {}", scenario.getName());
+        log.debug("Starting scenario: {}", scenario.getName());
     }
 
-    @After (value = "@ui")
-    public void tearDown(Scenario scenario){
+    /**
+     * Executed after each scenario tagged with {@code @ui}.
+     * <p>
+     * Shuts down Playwright and clears the {@link ScenarioContext}.
+     *
+     * @param scenario the Cucumber scenario object
+     */
+    @After(value = "@ui")
+    public void tearDown(Scenario scenario) {
 
         PlaywrightFactory.tearDown();
         ScenarioContext.getInstance().clear();
-        logger.info("[HOOK] END: {}", scenario.getName());
+        log.debug("END: {}", scenario.getName());
     }
-
 
 }
