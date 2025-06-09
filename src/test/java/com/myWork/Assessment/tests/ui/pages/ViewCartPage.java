@@ -7,8 +7,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.asserts.SoftAssert;
 
-
-import static org.testng.Assert.assertTrue;
 /**
  * Page Object representing the "View Cart" page.
  * <p>

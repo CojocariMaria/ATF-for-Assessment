@@ -1,7 +1,6 @@
 package com.myWork.Assessment.tests.hooks;
 
 import com.myWork.Assessment.tests.context.ScenarioContext;
-import com.myWork.Assessment.tests.driver.PlaywrightFactory;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;

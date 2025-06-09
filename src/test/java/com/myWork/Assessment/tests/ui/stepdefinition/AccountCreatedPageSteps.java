@@ -11,12 +11,10 @@ import static org.testng.Assert.assertTrue;
 
 public class AccountCreatedPageSteps {
 
-    private final Page page;
-    private CommonBase commonBase;
-    private AccountCreatedPage accountCreatedPage;
+    private final AccountCreatedPage accountCreatedPage;
 
     public AccountCreatedPageSteps(CommonBase commonBase) {
-        this.page = commonBase.getPage();
+        Page page = commonBase.getPage();
         this.accountCreatedPage = new AccountCreatedPage(page);
 
     }

@@ -25,7 +25,7 @@ public class AuthSteps {
     private CreateUserRequest createUser;
     private Response response;
     private static final Logger logger = LoggerFactory.getLogger(AuthSteps.class);
-    private LoginUserRequest loginUserRequest = new LoginUserRequest();;
+    private LoginUserRequest loginUserRequest = new LoginUserRequest();
     String email = ConfigLoader.getProperty("email");
     String password = ConfigLoader.getProperty("password");
 

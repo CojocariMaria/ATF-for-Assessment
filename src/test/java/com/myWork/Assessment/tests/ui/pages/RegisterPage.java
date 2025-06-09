@@ -6,7 +6,6 @@ import lombok.Data;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import static org.testng.Assert.assertTrue;
 /**
  * Page Object representing the Registration and Login page.
  * <p>

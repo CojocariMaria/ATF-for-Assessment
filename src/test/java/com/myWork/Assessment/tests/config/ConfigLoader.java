@@ -42,4 +42,15 @@ public class ConfigLoader {
     public static String getProperty(String key) {
         return properties.getProperty(key);
     }
+
+
+    /**
+     * Retrieves the value of a property by key and parses it as a boolean.
+     *
+     * @param key the name of the property
+     * @return {@code true} if the property value is "true" (case-insensitive), otherwise {@code false}
+     */
+    public static boolean getBoolean(String key) {
+        return Boolean.parseBoolean(properties.getProperty(key));
+    }
 }

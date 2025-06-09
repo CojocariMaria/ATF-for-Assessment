@@ -11,7 +11,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
-import static org.testng.Assert.assertTrue;
 /**
  * Page Object representing the Signup page used for new user registration.
  * <p>
@@ -129,7 +128,6 @@ public class SignupPage {
         }
         page.locator("#first_name").fill(firstName);
         page.locator("#last_name").fill(lastName);
-        ;
         page.locator("#company").fill(company);
         page.locator("#address1").fill(address1);
         page.locator("#address2").fill(address2);

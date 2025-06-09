@@ -9,12 +9,10 @@ import io.cucumber.java.en.Then;
 import java.util.Map;
 
 public class ProductDetailsPageSteps {
-    private Page page;
     private final ProductDetailsPage productDetailsPage;
-    CommonBase commonBase;
 
     public ProductDetailsPageSteps(CommonBase commonBase){
-        this.page = commonBase.getPage();
+        Page page = commonBase.getPage();
         this.productDetailsPage = new ProductDetailsPage(page);
     }
 
