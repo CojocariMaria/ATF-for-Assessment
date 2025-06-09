@@ -1,11 +1,9 @@
-package com.myWork.Assessment.tests.hooks;
+package com.myWork.Assessment.tests.base;
 
 import com.microsoft.playwright.Page;
-import lombok.Data;
+import com.myWork.Assessment.tests.driver.PlaywrightFactory;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * Base class responsible for initializing and providing access to a Playwright {@link Page} instance.

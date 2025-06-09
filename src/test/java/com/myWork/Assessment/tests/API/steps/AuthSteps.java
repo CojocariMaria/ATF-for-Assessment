@@ -6,7 +6,7 @@ import com.myWork.Assessment.tests.API.ApiClient;
 import com.myWork.Assessment.tests.API.request.CreateUserRequest;
 import com.myWork.Assessment.tests.API.request.LoginUserRequest;
 import com.myWork.Assessment.tests.API.response.UserDetailResponse;
-import com.myWork.Assessment.tests.utils.ConfigLoader;
+import com.myWork.Assessment.tests.config.ConfigLoader;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;

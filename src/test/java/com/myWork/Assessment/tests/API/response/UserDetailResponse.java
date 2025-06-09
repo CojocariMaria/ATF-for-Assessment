@@ -3,12 +3,21 @@ package com.myWork.Assessment.tests.API.response;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 
+/**
+ * Response DTO representing the API response for user detail retrieval.
+ * <p>
+ * Maps the full user profile and the associated HTTP response code.
+ * Fields that are not present in the JSON will be ignored due to {@code @JsonIgnoreProperties}.
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Data
 public class UserDetailResponse {
     private int responseCode;
     private User user;
 
+    /**
+     * Nested DTO representing user attributes returned in the response.
+     */
     @Data
     public static class User {
         private int id;

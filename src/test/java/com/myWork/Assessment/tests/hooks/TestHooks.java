@@ -1,13 +1,11 @@
 package com.myWork.Assessment.tests.hooks;
 
-import com.microsoft.playwright.Page;
-import com.myWork.Assessment.tests.utils.ScenarioContext;
+import com.myWork.Assessment.tests.context.ScenarioContext;
+import com.myWork.Assessment.tests.driver.PlaywrightFactory;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * Cucumber hook class responsible for setting up and tearing down Playwright before and after UI scenarios.

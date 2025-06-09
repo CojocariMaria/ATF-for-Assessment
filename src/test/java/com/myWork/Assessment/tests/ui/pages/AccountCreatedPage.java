@@ -5,7 +5,12 @@ import com.microsoft.playwright.Page;
 import com.microsoft.playwright.options.AriaRole;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
+/**
+ * Page Object representing the "Account Created" confirmation page.
+ * <p>
+ * Provides methods to verify the page is visible, extract success messages,
+ * and proceed to the next screen via the "Continue" button.
+ */
 public class AccountCreatedPage {
     private Page page;
     private final Locator continueButton;
@@ -16,6 +21,11 @@ public class AccountCreatedPage {
         this.page = page;
         this.continueButton = page.getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName("Continue"));
     }
+    /**
+     * Checks if the account created confirmation block is visible.
+     *
+     * @return true if the confirmation element is found and visible, false otherwise
+     */
 
     public boolean isAccountCreatedPageVisible() {
         logger.debug("Checking if Home Page is loaded...");
@@ -28,7 +38,11 @@ public class AccountCreatedPage {
             return false;
         }
     }
-
+    /**
+     * Retrieves the success message displayed after account creation.
+     *
+     * @return the message text content
+     */
     public String getAccountCreatedMessage() {
 
         String message = page.locator("div.col-sm-9.col-sm-offset-1 p").first().textContent().trim();
@@ -36,7 +50,9 @@ public class AccountCreatedPage {
         return message;
 
     }
-
+    /**
+     * Clicks the "Continue" button to proceed from the account created screen.
+     */
     public void clickOnContinueButton() {
 
         continueButton.click();

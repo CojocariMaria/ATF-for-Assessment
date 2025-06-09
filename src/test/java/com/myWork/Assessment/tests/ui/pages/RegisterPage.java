@@ -2,13 +2,17 @@ package com.myWork.Assessment.tests.ui.pages;
 
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
-import com.myWork.Assessment.tests.hooks.CommonBase;
 import lombok.Data;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import static org.testng.Assert.assertTrue;
-
+/**
+ * Page Object representing the Registration and Login page.
+ * <p>
+ * Supports actions such as user signup, login, and login error validation.
+ * Provides access to both registration and login form elements.
+ */
 @Data
 public class RegisterPage {
     private Page page;
@@ -33,7 +37,11 @@ public class RegisterPage {
         this.loginButton = page.locator("[data-qa='login-button']");
         this.errorMessage = page.locator("p:has-text('Your email or password is incorrect!')");
     }
-
+    /**
+     * Checks if the registration/login page is visible by verifying the presence of the form element.
+     *
+     * @return true if the page is visible, false otherwise
+     */
     public boolean isRegisterPageVisible() {
         logger.info("Checking if Register Page is loaded...");
         logger.info("Current URL: {}", page.url());
@@ -43,7 +51,12 @@ public class RegisterPage {
             return false;
         }
     }
-
+    /**
+     * Logs in using the provided email and password.
+     *
+     * @param email    the user's email address
+     * @param password the user's password
+     */
     public void login(String email, String password) {
 
         this.email.fill(email);
@@ -54,7 +67,14 @@ public class RegisterPage {
         logger.info("Click on [Login] button");
 
     }
-
+    /**
+     * Submits the signup form with the given name and email.
+     * <p>
+     * Throws a runtime exception if any field is null or empty.
+     *
+     * @param userName the user's name
+     * @param email    the user's email
+     */
     public void signup(String userName, String email) {
 
         this.signupName.fill(userName);
@@ -67,7 +87,11 @@ public class RegisterPage {
         signupButton.click();
 
     }
-
+    /**
+     * Checks if the login error message is visible on the page.
+     *
+     * @return true if the login error message is displayed, false otherwise
+     */
     public boolean isLoginErrorVisible() {
 
         String errorMessage = "p:has-text('Your email or password is incorrect!')";
@@ -81,11 +105,15 @@ public class RegisterPage {
             return visible;
 
         } catch (Exception e) {
-            logger.warn(" Login error message not found: {}", e.getMessage());
+            logger.error(" Login error message not found: {}", e.getMessage());
             return false;
         }
     }
-
+    /**
+     * Retrieves the text content of the login error message.
+     *
+     * @return the trimmed error message text
+     */
     public String getLoginErrorText() {
         String text = errorMessage.textContent().trim();
         logger.debug("Error message is displayed: '{}'", text);

@@ -1,7 +1,7 @@
-package com.myWork.Assessment.tests.hooks;
+package com.myWork.Assessment.tests.driver;
 
 import com.microsoft.playwright.*;
-import com.myWork.Assessment.tests.utils.ConfigLoader;
+import com.myWork.Assessment.tests.config.ConfigLoader;
 import lombok.Getter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

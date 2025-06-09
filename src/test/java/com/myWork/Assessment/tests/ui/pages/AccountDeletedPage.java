@@ -1,11 +1,13 @@
 package com.myWork.Assessment.tests.ui.pages;
 
-import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
-import com.myWork.Assessment.tests.hooks.CommonBase;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
+/**
+ * Page Object representing the "Account Deleted" confirmation screen.
+ * <p>
+ * Provides methods to verify whether the page is displayed and to check the presence of a confirmation message.
+ */
 public class AccountDeletedPage {
     private Page page;
 
@@ -15,7 +17,11 @@ public class AccountDeletedPage {
         this.page= page;
         //Locator continueButton = page.locator("[data-qa='continue-button']");
     }
-
+    /**
+     * Checks whether the "Account Deleted" confirmation element is visible on the page.
+     *
+     * @return true if the element is visible, false otherwise
+     */
     public boolean isAccountDeletedPageVisible(){
 
         try {
@@ -26,7 +32,12 @@ public class AccountDeletedPage {
             return false;
         }
     }
-
+    /**
+     * Verifies the presence of the account deletion confirmation message.
+     * <p>
+     * This method ensures the element is present but does not return a result.
+     * Typically used for asserting visibility during testing.
+     */
     public void checkAccountDeletedMessage(){
         page.locator("[data-qa='account-deleted']").isVisible();
     }

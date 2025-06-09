@@ -7,7 +7,12 @@ import org.slf4j.LoggerFactory;
 
 import java.util.HashMap;
 import java.util.Map;
-
+/**
+ * Page Object representing the Product Details page.
+ * <p>
+ * Provides functionality to verify page visibility and extract product-related information
+ * such as name, category, price, availability, brand, etc.
+ */
 public class ProductDetailsPage {
     private Page page;
     private final Locator productInformation;
@@ -18,7 +23,11 @@ public class ProductDetailsPage {
         this.page = page;
         this.productInformation = page.locator("div.product-information");
     }
-
+    /**
+     * Checks if the Product Details page is currently visible in the browser.
+     *
+     * @return true if the page is loaded and main container is visible, false otherwise
+     */
     public boolean isProductDetailsPageVisible() {
         logger.info("Checking if Product Details Page is loaded...");
         logger.info("Current URL: {}", page.url());
@@ -28,7 +37,13 @@ public class ProductDetailsPage {
             return false;
         }
     }
-
+    /**
+     * Extracts product details from the product information section of the page.
+     * <p>
+     * Retrieves name, category, price, quantity, availability, condition, and brand.
+     *
+     * @return a map of product attributes where keys are attribute names and values are their corresponding text values
+     */
     public Map<String, String> getProductDetails() {
         logger.info("Extraction of product details has begun...");
         Map<String, String> details = new HashMap<>();

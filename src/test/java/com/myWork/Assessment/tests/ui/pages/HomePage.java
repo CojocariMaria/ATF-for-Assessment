@@ -7,7 +7,12 @@ import lombok.Data;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-
+/**
+ * Page Object representing the Home Page of the web application.
+ * <p>
+ * Provides access to key UI elements such as navigation links, user info,
+ * and supports actions like logout, deleting account, navigating to products or cart.
+ */
 
 @Data
 public class HomePage {
@@ -29,6 +34,11 @@ public class HomePage {
         this.productsLink = page.getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName("Products"));
         this.cartLink = page.getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName("Cart"));
     }
+    /**
+     * Verifies whether the Home Page is visible by checking the presence of the slider component.
+     *
+     * @return true if the slider element is visible, false otherwise
+     */
     public boolean isHomePageVisible() {
         logger.debug("Checking if Home Page is loaded...");
         logger.debug("Current URL: {}" , page.url());
@@ -39,26 +49,36 @@ public class HomePage {
             return false;
         }
     }
-
+    /**
+     * Clicks the "Signup / Login" button.
+     */
     public void clickSignupLogin() {
         logger.info("Click on [Signup / Login] button");
         signupLoginLink.click();
     }
-
+    /**
+     * Clicks the "Delete Account" button.
+     */
     public void clickDeleteAccountButton() {
         logger.info("Click on [Delete Account] button");
         deleteAccountButton.click();
     }
-
+    /**
+     * Clicks the "Logout" button.
+     */
     public void clickLogoutButton() {
         logger.info("Click on [Logout] button");
         logoutButton.click();
     }
-
+    /**
+     * Clicks the "Products" navigation link.
+     */
     public void clickProductsButton() {
         productsLink.click();
     }
-
+    /**
+     * Clicks the "Cart" navigation link.
+     */
     public void clickCartButton() {
 
         logger.info("Click on [Cart] button");

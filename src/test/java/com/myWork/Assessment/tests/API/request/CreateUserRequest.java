@@ -2,6 +2,12 @@ package com.myWork.Assessment.tests.API.request;
 
 import lombok.Data;
 
+/**
+ * Data Transfer Object (DTO) representing the request body for user account creation.
+ * <p>
+ * This class is used to serialize data for POST requests to the user creation endpoint.
+ * All fields correspond to form or JSON fields required by the API.
+ */
 @Data
 public class CreateUserRequest {
 

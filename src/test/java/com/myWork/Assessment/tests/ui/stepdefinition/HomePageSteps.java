@@ -1,7 +1,7 @@
 package com.myWork.Assessment.tests.ui.stepdefinition;
 
 import com.microsoft.playwright.Page;
-import com.myWork.Assessment.tests.hooks.CommonBase;
+import com.myWork.Assessment.tests.base.CommonBase;
 import com.myWork.Assessment.tests.ui.pages.HomePage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;

@@ -1,14 +1,12 @@
 package com.myWork.Assessment.tests.ui.stepdefinition;
 
 import com.microsoft.playwright.Page;
-import com.myWork.Assessment.tests.hooks.CommonBase;
+import com.myWork.Assessment.tests.base.CommonBase;
 import com.myWork.Assessment.tests.ui.pages.HomePage;
 import com.myWork.Assessment.tests.ui.pages.ProductsPage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.When;
 import lombok.Data;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import static org.testng.Assert.assertTrue;
 

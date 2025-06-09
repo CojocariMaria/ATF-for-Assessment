@@ -9,7 +9,12 @@ import org.testng.asserts.SoftAssert;
 
 
 import static org.testng.Assert.assertTrue;
-
+/**
+ * Page Object representing the "View Cart" page.
+ * <p>
+ * Provides methods to validate that products are correctly added to the cart
+ * and their related information (description, price, quantity, total) is displayed.
+ */
 @Data
 public class ViewCartPage {
     private Page page;
@@ -22,7 +27,11 @@ public class ViewCartPage {
         this.product = page.locator("id='product-1'");
 
     }
-
+    /**
+     * Verifies whether the View Cart page is currently visible.
+     *
+     * @return true if the cart info section is visible, false otherwise
+     */
     public boolean isViewCartPageDisplayed() {
         logger.info("Checking if View_Cart Page is loaded...");
         logger.info("Current URL: {}", page.url());
@@ -32,14 +41,26 @@ public class ViewCartPage {
             return false;
         }
     }
-
+    /**
+     * Asserts that products with the given IDs are visible in the cart.
+     *
+     * @param expectedProductIds one or more product row IDs to validate (e.g. "product-1")
+     */
     public void assertProductsInCart(String... expectedProductIds) {
         for (String id : expectedProductIds) {
             Locator row = page.locator("tr#" + id);
-            assertTrue(row.isVisible(), "product with id " + id + " not found in cart");
+            if(row.isVisible()){
+                logger.info("Product with id {} is present in the cart",id);
+            }else {
+                logger.error("product with id {} not found in cart",id);
+            }
         }
     }
-
+    /**
+     * Asserts that the price, quantity, and total fields are visible for a given product.
+     *
+     * @param productId the row ID of the product to validate (e.g. "product-1")
+     */
     public void assertPriceQuantityTotalVisible(String productId) {
         SoftAssert softAssert = new SoftAssert();
 

@@ -1,16 +1,14 @@
 package com.myWork.Assessment.tests.ui.stepdefinition;
 
 import com.microsoft.playwright.Page;
-import com.myWork.Assessment.tests.hooks.CommonBase;
+import com.myWork.Assessment.tests.base.CommonBase;
 import com.myWork.Assessment.tests.ui.pages.SignupPage;
-import com.myWork.Assessment.tests.utils.ContextKey;
-import com.myWork.Assessment.tests.utils.ScenarioContext;
+import com.myWork.Assessment.tests.context.ContextKey;
+import com.myWork.Assessment.tests.context.ScenarioContext;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import lombok.Data;
 import net.datafaker.Faker;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.util.Map;
 
