@@ -36,6 +36,7 @@ public class SignupPage {
         logger.info("Checking if Signup Page is loaded...");
         logger.info("Current URL: {}", page.url());
         try {
+            page.locator("[id='form']").waitFor();
             return page.locator("[id='form']").isVisible();
         } catch (Exception e) {
             return false;

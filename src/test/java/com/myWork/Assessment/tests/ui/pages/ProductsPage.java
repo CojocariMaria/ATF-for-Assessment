@@ -35,6 +35,7 @@ public class ProductsPage {
         logger.info("Checking if Products Page is loaded...");
         logger.debug("Current URL: {}", page.url());
         try {
+            page.locator("h2.title:has-text('All Products')").waitFor();
             return page.locator("h2.title:has-text('All Products')").isVisible();
         } catch (Exception e) {
             return false;

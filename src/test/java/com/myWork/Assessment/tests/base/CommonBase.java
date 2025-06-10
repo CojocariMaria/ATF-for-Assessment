@@ -1,7 +1,7 @@
 package com.myWork.Assessment.tests.base;
 
 import com.microsoft.playwright.Page;
-import com.myWork.Assessment.tests.hooks.PlaywrightFactory;
+import com.myWork.Assessment.tests.driver.PlaywrightFactory;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 
@@ -17,6 +17,7 @@ import lombok.extern.slf4j.Slf4j;
 @Getter
 public class CommonBase {
     private final Page page;
+
     public CommonBase() {
 
         PlaywrightFactory.setup();

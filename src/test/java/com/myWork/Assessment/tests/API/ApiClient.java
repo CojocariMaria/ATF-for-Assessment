@@ -24,7 +24,7 @@ public class ApiClient {
     public Response getUserDetails() {
         return given()
                 .baseUri(url)
-                .queryParam("email",email)
+                .queryParam("email", email)
                 .log().all()
                 .when()
                 .get("api/getUserDetailByEmail")
@@ -89,7 +89,6 @@ public class ApiClient {
                 .log().all()
                 .extract().response();
     }
-
 
 
 }

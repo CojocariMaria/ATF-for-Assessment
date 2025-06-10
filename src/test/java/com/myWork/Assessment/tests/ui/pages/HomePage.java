@@ -43,6 +43,7 @@ public class HomePage {
         logger.debug("Checking if Home Page is loaded...");
         logger.debug("Current URL: {}" , page.url());
         try {
+            page.locator("[id='slider']").waitFor();
             return page.locator("[id='slider']").isVisible();
         } catch (Exception e) {
             logger.error("An error occurred while verifying the visibility of the #slider element: {}", e.getMessage());

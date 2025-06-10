@@ -1,6 +1,7 @@
 package com.myWork.Assessment.tests.API.request;
 
 import lombok.Data;
+
 /**
  * Data Transfer Object (DTO) representing the login request body for authentication.
  * <p>
