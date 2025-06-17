@@ -5,7 +5,7 @@ import com.myWork.Assessment.tests.API.request.LoginUserRequest;
 import com.myWork.Assessment.tests.config.ConfigLoader;
 import io.restassured.response.Response;
 
-import static io.restassured.RestAssured.*;
+import static io.restassured.RestAssured.given;
 
 /**
  * API client for interacting with user-related endpoints of the test application.

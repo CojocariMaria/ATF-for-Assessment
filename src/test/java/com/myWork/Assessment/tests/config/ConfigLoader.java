@@ -11,9 +11,6 @@ import java.util.Properties;
  */
 public class ConfigLoader {
 
-    /**
-     * Properties object that holds the loaded configuration.
-     */
     private static final Properties properties = new Properties();
 
 

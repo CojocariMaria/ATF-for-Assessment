@@ -1,28 +1,168 @@
-2025-06-06 17:04:53.819 DEBUG [main] c.m.Assessment.tests.hooks.TestHooks:35 - Launching Playwright...
-2025-06-06 17:04:53.843 DEBUG [main] c.m.A.tests.driver.PlaywrightFactory:38 - Setting up Playwright and browser...
-2025-06-06 17:05:11.603 DEBUG [main] c.m.A.tests.driver.PlaywrightFactory:67 - Navigated to: https://www.automationexercise.com/ 
-2025-06-06 17:05:11.608 DEBUG [main] c.m.Assessment.tests.hooks.TestHooks:38 - Starting scenario: Add product in Cart
-2025-06-06 17:05:11.615 DEBUG [main] c.m.A.tests.driver.PlaywrightFactory:38 - Setting up Playwright and browser...
-2025-06-06 17:05:15.552 DEBUG [main] c.m.A.tests.driver.PlaywrightFactory:67 - Navigated to: https://www.automationexercise.com/ 
-2025-06-06 17:05:15.553 DEBUG [main] c.m.Assessment.tests.base.CommonBase:24 - Playwright initialized
-2025-06-06 17:05:15.554 DEBUG [main] c.m.Assessment.tests.base.CommonBase:26 - Page is obtained from the PlaywrightFactory. Current URL: https://www.automationexercise.com/
-2025-06-06 17:05:15.566 INFO  [main] c.m.A.t.u.s.HomePageSteps:31 - Checking if Home Page is displayed...
-2025-06-06 17:05:15.568 DEBUG [main] c.m.A.t.u.s.HomePageSteps:32 - Current URL: https://www.automationexercise.com/
-2025-06-06 17:05:15.568 DEBUG [main] c.m.A.tests.ui.pages.HomePage:43 - Checking if Home Page is loaded...
-2025-06-06 17:05:15.568 DEBUG [main] c.m.A.tests.ui.pages.HomePage:44 - Current URL: https://www.automationexercise.com/
-2025-06-06 17:05:15.609 INFO  [main] c.m.A.t.u.s.HomePageSteps:62 - User clicks on [Products]
-2025-06-06 17:05:16.463 INFO  [main] c.m.A.tests.ui.pages.ProductsPage:35 - Checking if Products Page is loaded...
-2025-06-06 17:05:16.464 DEBUG [main] c.m.A.tests.ui.pages.ProductsPage:36 - Current URL: https://www.automationexercise.com/products
-2025-06-06 17:05:16.598 INFO  [main] c.m.A.tests.ui.pages.ProductsPage:59 - Adding product to the cart
-2025-06-06 17:05:16.795 INFO  [main] c.m.A.tests.ui.pages.ProductsPage:71 - Continue shopping link is clicked
-2025-06-06 17:05:18.411 INFO  [main] c.m.A.tests.ui.pages.HomePage:84 - Click on [Cart] button
-2025-06-06 17:05:18.841 INFO  [main] c.m.A.tests.ui.pages.ViewCartPage:36 - Checking if View_Cart Page is loaded...
-2025-06-06 17:05:18.841 INFO  [main] c.m.A.tests.ui.pages.ViewCartPage:37 - Current URL: https://www.automationexercise.com/view_cart
-2025-06-06 17:05:18.914 INFO  [main] c.m.A.tests.ui.pages.ViewCartPage:53 - Product with id product-1 is present in the cart
-2025-06-06 17:05:18.921 INFO  [main] c.m.A.tests.ui.pages.ViewCartPage:64 - Checking the displaying product info: product-1
-2025-06-06 17:05:18.931 INFO  [main] c.m.A.tests.ui.pages.ViewCartPage:72 - Description is displayed for product 'product-1'
-2025-06-06 17:05:18.936 INFO  [main] c.m.A.tests.ui.pages.ViewCartPage:74 - Price is displayed for product 'product-1'
-2025-06-06 17:05:18.940 INFO  [main] c.m.A.tests.ui.pages.ViewCartPage:76 - Quantity is displayed for product 'product-1'
-2025-06-06 17:05:18.943 INFO  [main] c.m.A.tests.ui.pages.ViewCartPage:78 - Total price is displayed for product 'product-1'
-2025-06-06 17:05:18.945 DEBUG [main] c.m.A.tests.driver.PlaywrightFactory:77 - Closing browser...
-2025-06-06 17:05:19.299 DEBUG [main] c.m.Assessment.tests.hooks.TestHooks:53 - END: Add product in Cart
+2025-06-17 14:58:15.704 DEBUG [main] c.m.A.tests.API.steps.AuthSteps:55 - Name: Bret, Email: inge.bailey@yahoo.com, Title: Mrs
+2025-06-17 14:58:15.724 DEBUG [main] c.m.A.tests.API.steps.AuthSteps:56 - Password: ********** (hidden for security)
+2025-06-17 14:58:15.724 DEBUG [main] c.m.A.tests.API.steps.AuthSteps:57 - Birth date: 6-6-1906
+2025-06-17 14:58:15.724 DEBUG [main] c.m.A.tests.API.steps.AuthSteps:58 - Full Name: Jefferey Walsh, Company: Gutkowski, Nolan and Wintheiser
+2025-06-17 14:58:15.724 DEBUG [main] c.m.A.tests.API.steps.AuthSteps:59 - Address: Suite 292 223 Welch Flats, Gabrielebury, PA 45964, Apt. 743, Canada, Indiana, East Rory, 04774
+2025-06-17 14:58:15.724 DEBUG [main] c.m.A.tests.API.steps.AuthSteps:66 -  Mobile number: (983) 361-9563
+2025-06-17 14:58:18.227 INFO  [main] c.m.A.tests.API.steps.AuthSteps:73 - Sent POST request to /api/createAccount
+2025-06-17 14:58:18.227 DEBUG [main] c.m.A.tests.API.steps.AuthSteps:79 - http status code is 200
+2025-06-17 14:58:18.670 DEBUG [main] c.m.A.tests.API.steps.AuthSteps:86 - API responseCode (from JSON): 201
+2025-06-17 14:58:18.670 DEBUG [main] c.m.A.tests.API.steps.AuthSteps:94 - Response body:
+{"responseCode": 201, "message": "User created!"}
+2025-06-17 14:58:18.687 INFO  [main] c.m.A.tests.API.steps.AuthSteps:106 - Valid credentials are provided
+2025-06-17 14:58:18.687 INFO  [main] c.m.A.tests.API.steps.AuthSteps:107 - Email: welcome123@mail.com
+2025-06-17 14:58:18.687 INFO  [main] c.m.A.tests.API.steps.AuthSteps:108 - Password: ******** (hidden)
+2025-06-17 14:58:19.670 INFO  [main] c.m.A.tests.API.steps.AuthSteps:124 - Sent POST request to /api/verifyLogin
+2025-06-17 14:58:19.670 DEBUG [main] c.m.A.tests.API.steps.AuthSteps:79 - http status code is 200
+2025-06-17 14:58:19.680 DEBUG [main] c.m.A.tests.API.steps.AuthSteps:86 - API responseCode (from JSON): 200
+2025-06-17 14:58:19.680 DEBUG [main] c.m.A.tests.API.steps.AuthSteps:94 - Response body:
+{"responseCode": 200, "message": "User exists!"}
+2025-06-17 14:58:19.690 INFO  [main] c.m.A.tests.API.steps.AuthSteps:116 - Invalid credentials are provided
+2025-06-17 14:58:19.690 INFO  [main] c.m.A.tests.API.steps.AuthSteps:117 - Email : welcome123@mail.com
+2025-06-17 14:58:19.690 INFO  [main] c.m.A.tests.API.steps.AuthSteps:118 - Password : ******** (hidden)
+2025-06-17 14:58:20.524 INFO  [main] c.m.A.tests.API.steps.AuthSteps:124 - Sent POST request to /api/verifyLogin
+2025-06-17 14:58:20.524 DEBUG [main] c.m.A.tests.API.steps.AuthSteps:79 - http status code is 200
+2025-06-17 14:58:20.524 DEBUG [main] c.m.A.tests.API.steps.AuthSteps:86 - API responseCode (from JSON): 404
+2025-06-17 14:58:20.524 DEBUG [main] c.m.A.tests.API.steps.AuthSteps:94 - Response body:
+{"responseCode": 404, "message": "User not found!"}
+2025-06-17 14:58:20.541 INFO  [main] c.m.A.tests.API.steps.AuthSteps:130 - Email: welcome123@mail.com is provided 
+2025-06-17 14:58:21.378 INFO  [main] c.m.A.tests.API.steps.AuthSteps:138 - Sent GET request to api/getUserDetailByEmail
+2025-06-17 14:58:21.378 DEBUG [main] c.m.A.tests.API.steps.AuthSteps:79 - http status code is 200
+2025-06-17 14:58:21.378 INFO  [main] c.m.A.tests.API.steps.AuthSteps:144 - Checking that response contains valid user details...
+2025-06-17 14:58:21.378 DEBUG [main] c.m.A.tests.API.steps.AuthSteps:147 - Raw response:
+{"responseCode": 200, "user": {"id": 745934, "name": "Maria", "email": "welcome123@mail.com", "title": "", "birth_day": "14", "birth_month": "2", "birth_year": "1989", "first_name": "Maria", "last_name": "Maria", "company": "XXX", "address1": "XXX", "address2": "YYY", "country": "United States", "state": "NY", "city": "NY", "zipcode": "12584"}}
+2025-06-17 14:58:21.585 INFO  [main] c.m.A.tests.API.steps.AuthSteps:155 - User details validated successfully.
+2025-06-17 14:58:21.595 DEBUG [main] c.m.Assessment.tests.hooks.TestHooks:35 - Launching Playwright...
+2025-06-17 14:58:21.595 DEBUG [main] c.m.A.tests.driver.PlaywrightFactory:39 - Setting up Playwright and browser...
+2025-06-17 14:58:42.882 DEBUG [main] c.m.A.tests.driver.PlaywrightFactory:68 - Navigated to: https://www.automationexercise.com/ 
+2025-06-17 14:58:42.883 DEBUG [main] c.m.Assessment.tests.hooks.TestHooks:38 - Starting scenario: Verify All Products and product detail page
+2025-06-17 14:58:42.884 DEBUG [main] c.m.A.tests.driver.PlaywrightFactory:39 - Setting up Playwright and browser...
+2025-06-17 14:58:47.092 DEBUG [main] c.m.A.tests.driver.PlaywrightFactory:68 - Navigated to: https://www.automationexercise.com/ 
+2025-06-17 14:58:47.093 DEBUG [main] c.m.Assessment.tests.base.CommonBase:25 - Playwright initialized
+2025-06-17 14:58:47.093 DEBUG [main] c.m.Assessment.tests.base.CommonBase:27 - Page is obtained from the PlaywrightFactory. Current URL: https://www.automationexercise.com/
+2025-06-17 14:58:47.102 INFO  [main] c.m.A.t.u.s.HomePageSteps:32 - Checking if Home Page is displayed...
+2025-06-17 14:58:47.102 DEBUG [main] c.m.A.t.u.s.HomePageSteps:33 - Current URL: https://www.automationexercise.com/
+2025-06-17 14:58:47.102 DEBUG [main] c.m.A.tests.ui.pages.HomePage:45 - Checking if Home Page is loaded...
+2025-06-17 14:58:47.103 DEBUG [main] c.m.A.tests.ui.pages.HomePage:46 - Current URL: https://www.automationexercise.com/
+2025-06-17 14:58:47.137 INFO  [main] c.m.A.t.u.s.HomePageSteps:64 - User clicks on [Products]
+2025-06-17 14:58:47.980 INFO  [main] c.m.A.tests.ui.pages.ProductsPage:36 - Checking if Products Page is loaded...
+2025-06-17 14:58:47.980 DEBUG [main] c.m.A.tests.ui.pages.ProductsPage:37 - Current URL: https://www.automationexercise.com/products
+2025-06-17 14:58:49.155 INFO  [main] c.m.A.tests.ui.pages.ProductsPage:51 - Product was selected
+2025-06-17 14:58:49.156 INFO  [main] c.m.A.t.ui.pages.ProductDetailsPage:34 - Checking if Product Details Page is loaded...
+2025-06-17 14:58:49.156 INFO  [main] c.m.A.t.ui.pages.ProductDetailsPage:35 - Current URL: https://www.automationexercise.com/product_details/1
+2025-06-17 14:58:49.199 INFO  [main] c.m.A.t.ui.pages.ProductDetailsPage:51 - Extraction of product details has begun...
+2025-06-17 14:58:49.233 DEBUG [main] c.m.A.t.ui.pages.ProductDetailsPage:61 - Product details: {condition=New, quantity=Quantity:, price=Rs. 500
+									Quantity:
+									
+									
+									
+										
+										Add to cart, name=Blue Top, availability=In Stock, category=Women > Tops, brand=Polo}
+2025-06-17 14:58:49.235 DEBUG [main] c.m.A.tests.driver.PlaywrightFactory:78 - Closing browser...
+2025-06-17 14:58:49.612 DEBUG [main] c.m.Assessment.tests.hooks.TestHooks:53 - END: Verify All Products and product detail page
+2025-06-17 14:58:49.621 DEBUG [main] c.m.Assessment.tests.hooks.TestHooks:35 - Launching Playwright...
+2025-06-17 14:58:49.622 DEBUG [main] c.m.A.tests.driver.PlaywrightFactory:39 - Setting up Playwright and browser...
+2025-06-17 14:58:59.277 DEBUG [main] c.m.A.tests.driver.PlaywrightFactory:68 - Navigated to: https://www.automationexercise.com/ 
+2025-06-17 14:58:59.278 DEBUG [main] c.m.Assessment.tests.hooks.TestHooks:38 - Starting scenario: Add product in Cart
+2025-06-17 14:58:59.279 DEBUG [main] c.m.A.tests.driver.PlaywrightFactory:39 - Setting up Playwright and browser...
+2025-06-17 14:59:04.111 DEBUG [main] c.m.A.tests.driver.PlaywrightFactory:68 - Navigated to: https://www.automationexercise.com/ 
+2025-06-17 14:59:04.112 DEBUG [main] c.m.Assessment.tests.base.CommonBase:25 - Playwright initialized
+2025-06-17 14:59:04.112 DEBUG [main] c.m.Assessment.tests.base.CommonBase:27 - Page is obtained from the PlaywrightFactory. Current URL: https://www.automationexercise.com/
+2025-06-17 14:59:04.113 INFO  [main] c.m.A.t.u.s.HomePageSteps:32 - Checking if Home Page is displayed...
+2025-06-17 14:59:04.113 DEBUG [main] c.m.A.t.u.s.HomePageSteps:33 - Current URL: https://www.automationexercise.com/
+2025-06-17 14:59:04.113 DEBUG [main] c.m.A.tests.ui.pages.HomePage:45 - Checking if Home Page is loaded...
+2025-06-17 14:59:04.113 DEBUG [main] c.m.A.tests.ui.pages.HomePage:46 - Current URL: https://www.automationexercise.com/
+2025-06-17 14:59:04.157 INFO  [main] c.m.A.t.u.s.HomePageSteps:64 - User clicks on [Products]
+2025-06-17 14:59:05.060 INFO  [main] c.m.A.tests.ui.pages.ProductsPage:36 - Checking if Products Page is loaded...
+2025-06-17 14:59:05.061 DEBUG [main] c.m.A.tests.ui.pages.ProductsPage:37 - Current URL: https://www.automationexercise.com/products
+2025-06-17 14:59:05.102 INFO  [main] c.m.A.tests.ui.pages.ProductsPage:62 - Adding product to the cart
+2025-06-17 14:59:05.187 INFO  [main] c.m.A.tests.ui.pages.ProductsPage:74 - Continue shopping link is clicked
+2025-06-17 14:59:06.117 INFO  [main] c.m.A.tests.ui.pages.HomePage:92 - Click on [Cart] button
+2025-06-17 14:59:06.527 INFO  [main] c.m.A.tests.ui.pages.ViewCartPage:35 - Checking if View_Cart Page is loaded...
+2025-06-17 14:59:06.528 INFO  [main] c.m.A.tests.ui.pages.ViewCartPage:36 - Current URL: https://www.automationexercise.com/view_cart
+2025-06-17 14:59:06.543 INFO  [main] c.m.A.tests.ui.pages.ViewCartPage:53 - Product with id product-1 is present in the cart
+2025-06-17 14:59:06.548 INFO  [main] c.m.A.tests.ui.pages.ViewCartPage:68 - Checking the displaying product info: product-1
+2025-06-17 14:59:06.551 INFO  [main] c.m.A.tests.ui.pages.ViewCartPage:76 - Description is displayed for product 'product-1'
+2025-06-17 14:59:06.555 INFO  [main] c.m.A.tests.ui.pages.ViewCartPage:78 - Price is displayed for product 'product-1'
+2025-06-17 14:59:06.557 INFO  [main] c.m.A.tests.ui.pages.ViewCartPage:80 - Quantity is displayed for product 'product-1'
+2025-06-17 14:59:06.558 INFO  [main] c.m.A.tests.ui.pages.ViewCartPage:82 - Total price is displayed for product 'product-1'
+2025-06-17 14:59:06.559 DEBUG [main] c.m.A.tests.driver.PlaywrightFactory:78 - Closing browser...
+2025-06-17 14:59:06.822 DEBUG [main] c.m.Assessment.tests.hooks.TestHooks:53 - END: Add product in Cart
+2025-06-17 14:59:06.834 DEBUG [main] c.m.Assessment.tests.hooks.TestHooks:35 - Launching Playwright...
+2025-06-17 14:59:06.834 DEBUG [main] c.m.A.tests.driver.PlaywrightFactory:39 - Setting up Playwright and browser...
+2025-06-17 14:59:13.230 DEBUG [main] c.m.A.tests.driver.PlaywrightFactory:68 - Navigated to: https://www.automationexercise.com/ 
+2025-06-17 14:59:13.231 DEBUG [main] c.m.Assessment.tests.hooks.TestHooks:38 - Starting scenario: User registration, login, and account deletion flow
+2025-06-17 14:59:13.231 DEBUG [main] c.m.A.tests.driver.PlaywrightFactory:39 - Setting up Playwright and browser...
+2025-06-17 14:59:17.912 DEBUG [main] c.m.A.tests.driver.PlaywrightFactory:68 - Navigated to: https://www.automationexercise.com/ 
+2025-06-17 14:59:17.914 DEBUG [main] c.m.Assessment.tests.base.CommonBase:25 - Playwright initialized
+2025-06-17 14:59:17.914 DEBUG [main] c.m.Assessment.tests.base.CommonBase:27 - Page is obtained from the PlaywrightFactory. Current URL: https://www.automationexercise.com/
+2025-06-17 14:59:17.914 INFO  [main] c.m.A.t.u.s.HomePageSteps:32 - Checking if Home Page is displayed...
+2025-06-17 14:59:17.915 DEBUG [main] c.m.A.t.u.s.HomePageSteps:33 - Current URL: https://www.automationexercise.com/
+2025-06-17 14:59:17.915 DEBUG [main] c.m.A.tests.ui.pages.HomePage:45 - Checking if Home Page is loaded...
+2025-06-17 14:59:17.915 DEBUG [main] c.m.A.tests.ui.pages.HomePage:46 - Current URL: https://www.automationexercise.com/
+2025-06-17 14:59:17.970 INFO  [main] c.m.A.t.u.s.HomePageSteps:40 - User clicks on [Signup / Login]
+2025-06-17 14:59:17.970 INFO  [main] c.m.A.tests.ui.pages.HomePage:60 - Click on [Signup / Login] button
+2025-06-17 14:59:18.825 INFO  [main] c.m.A.t.u.s.RegisterPageSteps:38 - Signup_Login page is displayed
+2025-06-17 14:59:18.826 INFO  [main] c.m.A.tests.ui.pages.RegisterPage:46 - Checking if Register Page is loaded...
+2025-06-17 14:59:18.826 INFO  [main] c.m.A.tests.ui.pages.RegisterPage:47 - Current URL: https://www.automationexercise.com/login
+2025-06-17 14:59:18.875 INFO  [main] c.m.A.t.u.s.RegisterPageSteps:48 - User filled in registration details and clicks [Signup]
+2025-06-17 14:59:18.936 DEBUG [main] c.m.A.tests.ui.pages.RegisterPage:84 -  Name 'Garfield' and Email 'ivy.breitenberg@gmail.com' were filled in and sighup button was clicked
+2025-06-17 14:59:19.267 INFO  [main] c.m.A.tests.ui.pages.SignupPage:36 - Checking if Signup Page is loaded...
+2025-06-17 14:59:19.268 INFO  [main] c.m.A.tests.ui.pages.SignupPage:37 - Current URL: https://www.automationexercise.com/signup
+2025-06-17 14:59:19.404 DEBUG [main] c.m.A.tests.ui.pages.SignupPage:66 - Password ********* was filled in in the field
+2025-06-17 14:59:19.508 DEBUG [main] c.m.A.tests.ui.pages.SignupPage:53 - Was selected '0'
+2025-06-17 14:59:19.554 DEBUG [main] c.m.A.tests.ui.pages.SignupPage:89 - Following information was provided: Day '14',Month 'June', Year '1985'
+2025-06-17 14:59:19.555 INFO  [main] c.m.A.tests.ui.pages.SignupPage:96 - Checkbox 'Newsletter' was checked
+2025-06-17 14:59:19.623 INFO  [main] c.m.A.tests.ui.pages.SignupPage:104 - Checkbox 'Offers' was selected
+2025-06-17 14:59:19.817 DEBUG [main] c.m.A.tests.ui.pages.SignupPage:146 - The following info was provided: First Name: 'Garfield', Last Name: 'Hyatt', Company: 'Okuneva, MacGyver and Corwin', Address1: 'Suite 438 703 Freeman Junctions, South Berniemouth, AL 26704',Address2: 'Suite 855', Country: 'India', State: 'Massachusetts', City: 'Boehmside', Zipcode: '37770', Mobile Number: '(480) 674-7661' 
+2025-06-17 14:59:19.818 INFO  [main] c.m.A.tests.ui.pages.SignupPage:155 - User clicks on [Create Account] button
+2025-06-17 14:59:20.557 DEBUG [main] c.m.A.t.ui.pages.AccountCreatedPage:33 - Checking if Home Page is loaded...
+2025-06-17 14:59:20.557 INFO  [main] c.m.A.t.ui.pages.AccountCreatedPage:34 - Current URL: https://www.automationexercise.com/account_created
+2025-06-17 14:59:20.623 INFO  [main] c.m.A.t.ui.pages.AccountCreatedPage:52 - Account created page message is displayed: Congratulations! Your new account has been successfully created!
+2025-06-17 14:59:20.990 INFO  [main] c.m.A.t.ui.pages.AccountCreatedPage:63 - Continue button was clicked
+2025-06-17 14:59:20.991 INFO  [main] c.m.A.t.u.s.HomePageSteps:46 - User is redirected to Home page
+2025-06-17 14:59:20.991 DEBUG [main] c.m.A.tests.ui.pages.HomePage:45 - Checking if Home Page is loaded...
+2025-06-17 14:59:20.991 DEBUG [main] c.m.A.tests.ui.pages.HomePage:46 - Current URL: https://www.automationexercise.com/
+2025-06-17 14:59:21.076 INFO  [main] c.m.A.t.u.s.HomePageSteps:58 - User clicks on [Logout]
+2025-06-17 14:59:21.076 INFO  [main] c.m.A.tests.ui.pages.HomePage:76 - Click on [Logout] button
+2025-06-17 14:59:22.816 INFO  [main] c.m.A.t.u.s.RegisterPageSteps:38 - Signup_Login page is displayed
+2025-06-17 14:59:22.817 INFO  [main] c.m.A.tests.ui.pages.RegisterPage:46 - Checking if Register Page is loaded...
+2025-06-17 14:59:22.817 INFO  [main] c.m.A.tests.ui.pages.RegisterPage:47 - Current URL: https://www.automationexercise.com/login
+2025-06-17 14:59:22.830 INFO  [main] c.m.A.t.u.s.RegisterPageSteps:58 - User entered valid details and clicks [Login]
+2025-06-17 14:59:22.840 DEBUG [main] c.m.A.tests.ui.pages.RegisterPage:64 - Fill randomly generated email: ivy.breitenberg@gmail.com
+2025-06-17 14:59:22.848 DEBUG [main] c.m.A.tests.ui.pages.RegisterPage:66 - Fill random password: 4h1m93740e
+2025-06-17 14:59:23.535 INFO  [main] c.m.A.tests.ui.pages.RegisterPage:68 - Click on [Login] button
+2025-06-17 14:59:23.535 INFO  [main] c.m.A.t.u.s.HomePageSteps:46 - User is redirected to Home page
+2025-06-17 14:59:23.536 DEBUG [main] c.m.A.tests.ui.pages.HomePage:45 - Checking if Home Page is loaded...
+2025-06-17 14:59:23.536 DEBUG [main] c.m.A.tests.ui.pages.HomePage:46 - Current URL: https://www.automationexercise.com/
+2025-06-17 14:59:23.609 INFO  [main] c.m.A.t.u.s.HomePageSteps:52 - User clicks on [Delete Account]
+2025-06-17 14:59:23.610 INFO  [main] c.m.A.tests.ui.pages.HomePage:68 - Click on [Delete Account] button
+2025-06-17 14:59:24.048 DEBUG [main] c.m.A.tests.driver.PlaywrightFactory:78 - Closing browser...
+2025-06-17 14:59:24.309 DEBUG [main] c.m.Assessment.tests.hooks.TestHooks:53 - END: User registration, login, and account deletion flow
+2025-06-17 14:59:24.319 DEBUG [main] c.m.Assessment.tests.hooks.TestHooks:35 - Launching Playwright...
+2025-06-17 14:59:24.320 DEBUG [main] c.m.A.tests.driver.PlaywrightFactory:39 - Setting up Playwright and browser...
+2025-06-17 14:59:28.016 DEBUG [main] c.m.A.tests.driver.PlaywrightFactory:68 - Navigated to: https://www.automationexercise.com/ 
+2025-06-17 14:59:28.016 DEBUG [main] c.m.Assessment.tests.hooks.TestHooks:38 - Starting scenario: Login User with incorrect email and password
+2025-06-17 14:59:28.017 DEBUG [main] c.m.A.tests.driver.PlaywrightFactory:39 - Setting up Playwright and browser...
+2025-06-17 14:59:32.013 DEBUG [main] c.m.A.tests.driver.PlaywrightFactory:68 - Navigated to: https://www.automationexercise.com/ 
+2025-06-17 14:59:32.013 DEBUG [main] c.m.Assessment.tests.base.CommonBase:25 - Playwright initialized
+2025-06-17 14:59:32.015 DEBUG [main] c.m.Assessment.tests.base.CommonBase:27 - Page is obtained from the PlaywrightFactory. Current URL: https://www.automationexercise.com/
+2025-06-17 14:59:32.015 INFO  [main] c.m.A.t.u.s.HomePageSteps:32 - Checking if Home Page is displayed...
+2025-06-17 14:59:32.015 DEBUG [main] c.m.A.t.u.s.HomePageSteps:33 - Current URL: https://www.automationexercise.com/
+2025-06-17 14:59:32.015 DEBUG [main] c.m.A.tests.ui.pages.HomePage:45 - Checking if Home Page is loaded...
+2025-06-17 14:59:32.015 DEBUG [main] c.m.A.tests.ui.pages.HomePage:46 - Current URL: https://www.automationexercise.com/
+2025-06-17 14:59:32.051 INFO  [main] c.m.A.t.u.s.HomePageSteps:40 - User clicks on [Signup / Login]
+2025-06-17 14:59:32.051 INFO  [main] c.m.A.tests.ui.pages.HomePage:60 - Click on [Signup / Login] button
+2025-06-17 14:59:32.881 INFO  [main] c.m.A.t.u.s.RegisterPageSteps:38 - Signup_Login page is displayed
+2025-06-17 14:59:32.882 INFO  [main] c.m.A.tests.ui.pages.RegisterPage:46 - Checking if Register Page is loaded...
+2025-06-17 14:59:32.882 INFO  [main] c.m.A.tests.ui.pages.RegisterPage:47 - Current URL: https://www.automationexercise.com/login
+2025-06-17 14:59:32.909 INFO  [main] c.m.A.t.u.s.RegisterPageSteps:66 - User entered incorrect details and clicks [Login]
+2025-06-17 14:59:32.918 DEBUG [main] c.m.A.tests.ui.pages.RegisterPage:64 - Fill randomly generated email: victor.ebert@gmail.com
+2025-06-17 14:59:32.929 DEBUG [main] c.m.A.tests.ui.pages.RegisterPage:66 - Fill random password: f550r3os43
+2025-06-17 14:59:33.222 INFO  [main] c.m.A.tests.ui.pages.RegisterPage:68 - Click on [Login] button
+2025-06-17 14:59:33.224 DEBUG [main] c.m.A.tests.ui.pages.RegisterPage:103 - Waiting for the login error message to appear...
+2025-06-17 14:59:33.275 DEBUG [main] c.m.A.tests.ui.pages.RegisterPage:107 - The login error message is displayed: true
+2025-06-17 14:59:33.277 DEBUG [main] c.m.A.tests.ui.pages.RegisterPage:123 - Error message is displayed: 'Your email or password is incorrect!'
+2025-06-17 14:59:33.277 INFO  [main] c.m.A.t.u.s.RegisterPageSteps:75 - Error message is visible
+2025-06-17 14:59:33.278 DEBUG [main] c.m.A.tests.driver.PlaywrightFactory:78 - Closing browser...
+2025-06-17 14:59:33.543 DEBUG [main] c.m.Assessment.tests.hooks.TestHooks:53 - END: Login User with incorrect email and password

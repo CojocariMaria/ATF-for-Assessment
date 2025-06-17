@@ -36,6 +36,7 @@ public class RegisterPage {
         this.loginButton = page.locator("[data-qa='login-button']");
         this.errorMessage = page.locator("p:has-text('Your email or password is incorrect!')");
     }
+
     /**
      * Checks if the registration/login page is visible by verifying the presence of the form element.
      *
@@ -50,6 +51,7 @@ public class RegisterPage {
             return false;
         }
     }
+
     /**
      * Logs in using the provided email and password.
      *
@@ -66,6 +68,7 @@ public class RegisterPage {
         logger.info("Click on [Login] button");
 
     }
+
     /**
      * Submits the signup form with the given name and email.
      * <p>
@@ -86,6 +89,7 @@ public class RegisterPage {
         signupButton.click();
 
     }
+
     /**
      * Checks if the login error message is visible on the page.
      *
@@ -108,6 +112,7 @@ public class RegisterPage {
             return false;
         }
     }
+
     /**
      * Retrieves the text content of the login error message.
      *

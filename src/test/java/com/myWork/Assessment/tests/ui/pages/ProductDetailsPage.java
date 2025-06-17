@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 
 import java.util.HashMap;
 import java.util.Map;
+
 /**
  * Page Object representing the Product Details page.
  * <p>
@@ -23,6 +24,7 @@ public class ProductDetailsPage {
         this.page = page;
         this.productInformation = page.locator("div.product-information");
     }
+
     /**
      * Checks if the Product Details page is currently visible in the browser.
      *
@@ -37,6 +39,7 @@ public class ProductDetailsPage {
             return false;
         }
     }
+
     /**
      * Extracts product details from the product information section of the page.
      * <p>

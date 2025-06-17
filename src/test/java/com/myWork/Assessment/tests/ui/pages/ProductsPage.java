@@ -5,6 +5,7 @@ import com.microsoft.playwright.Page;
 import lombok.Data;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 /**
  * Page Object representing the Products page, which lists all available products for the user.
  * <p>
@@ -41,6 +42,7 @@ public class ProductsPage {
             return false;
         }
     }
+
     /**
      * Clicks on the "View Product" link for the first product on the page.
      */

@@ -16,7 +16,7 @@ public class ProductsPageSteps {
     private ProductsPage productsPage;
     private CommonBase commonBase;
     private HomePage homePage;
-    
+
     public ProductsPageSteps(CommonBase commonBase) {
         this.page = commonBase.getPage();
         this.productsPage = new ProductsPage(page);
@@ -45,13 +45,13 @@ public class ProductsPageSteps {
 
     @And("clicks on [Continue Shopping] button")
     public void clicksOnContinueShoppingButton() {
-        productsPage.clickContinueShoppingButton();}
-
+        productsPage.clickContinueShoppingButton();
+    }
 
 
     @And("click [Cart] button")
     public void clickViewCartButton() {
-      homePage.clickCartButton();
+        homePage.clickCartButton();
     }
 
 

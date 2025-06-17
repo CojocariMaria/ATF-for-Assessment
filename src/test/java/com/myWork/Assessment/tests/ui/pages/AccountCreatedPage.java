@@ -5,6 +5,7 @@ import com.microsoft.playwright.Page;
 import com.microsoft.playwright.options.AriaRole;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 /**
  * Page Object representing the "Account Created" confirmation page.
  * <p>
@@ -21,6 +22,7 @@ public class AccountCreatedPage {
         this.page = page;
         this.continueButton = page.getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName("Continue"));
     }
+
     /**
      * Checks if the account created confirmation block is visible.
      *
@@ -34,10 +36,11 @@ public class AccountCreatedPage {
             page.waitForSelector("[data-qa='account-created']", new Page.WaitForSelectorOptions().setTimeout(5000));
             return page.locator("[data-qa='account-created']").isVisible();
         } catch (Exception e) {
-            logger.error("Account Created element not found: {}" , e.getMessage());
+            logger.error("Account Created element not found: {}", e.getMessage());
             return false;
         }
     }
+
     /**
      * Retrieves the success message displayed after account creation.
      *
@@ -50,6 +53,7 @@ public class AccountCreatedPage {
         return message;
 
     }
+
     /**
      * Clicks the "Continue" button to proceed from the account created screen.
      */

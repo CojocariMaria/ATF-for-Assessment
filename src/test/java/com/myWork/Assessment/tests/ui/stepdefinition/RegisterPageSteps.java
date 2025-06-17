@@ -2,9 +2,9 @@ package com.myWork.Assessment.tests.ui.stepdefinition;
 
 import com.microsoft.playwright.Page;
 import com.myWork.Assessment.tests.base.CommonBase;
-import com.myWork.Assessment.tests.ui.pages.RegisterPage;
 import com.myWork.Assessment.tests.context.ContextKey;
 import com.myWork.Assessment.tests.context.ScenarioContext;
+import com.myWork.Assessment.tests.ui.pages.RegisterPage;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
@@ -41,19 +41,19 @@ public class RegisterPageSteps {
 
     @When("User enters registration details and clicks [Signup] Button")
     public void userEntersRegistrationDetailsAndClicksSignupButton() {
-      String userName = faker.name().firstName();
-      String email = faker.internet().emailAddress();
-      scenarioContext.set(ContextKey.USERNAME,userName);
-      scenarioContext.set(ContextKey.EMAIL,email);
-      logger.info("User filled in registration details and clicks [Signup]");
-        registerPage.signup(userName,email);
+        String userName = faker.name().firstName();
+        String email = faker.internet().emailAddress();
+        scenarioContext.set(ContextKey.USERNAME, userName);
+        scenarioContext.set(ContextKey.EMAIL, email);
+        logger.info("User filled in registration details and clicks [Signup]");
+        registerPage.signup(userName, email);
 
     }
 
 
     @And("User enters valid details and clicks [Login] button")
     public void userEntersDetailsAndClicksLoginButton() {
-        String email = scenarioContext.get(ContextKey.EMAIL,String.class);
+        String email = scenarioContext.get(ContextKey.EMAIL, String.class);
         String password = scenarioContext.get(ContextKey.PASSWORD, String.class);
         logger.info("User entered valid details and clicks [Login]");
         registerPage.login(email, password);

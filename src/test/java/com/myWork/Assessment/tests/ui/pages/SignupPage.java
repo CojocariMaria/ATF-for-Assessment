@@ -20,7 +20,7 @@ import java.util.Random;
 public class SignupPage {
     private final Page page;
     private static final Logger logger = LoggerFactory.getLogger(SignupPage.class);
-    ScenarioContext scenarioContext =ScenarioContext.getInstance();
+    ScenarioContext scenarioContext = ScenarioContext.getInstance();
 
 
     public SignupPage(Page page) {
@@ -42,6 +42,7 @@ public class SignupPage {
             return false;
         }
     }
+
     /**
      * Randomly selects one of the available gender options (Mr or Mrs).
      */
@@ -51,6 +52,7 @@ public class SignupPage {
         page.locator(genderIds.get(index)).check();
         logger.debug("Was selected '{}'", index);
     }
+
     /**
      * Fills the password field with the given value.
      *
@@ -63,6 +65,7 @@ public class SignupPage {
         page.locator("#password").fill(password);
         logger.debug("Password ********* was filled in in the field");
     }
+
     /**
      * Selects date of birth from dropdowns using values provided in the map.
      * <p>
@@ -85,6 +88,7 @@ public class SignupPage {
         page.selectOption("#years", year);
         logger.debug("Following information was provided: Day '{}',Month '{}', Year '{}'", day, month, year);
     }
+
     /**
      * Selects the "Sign up for our newsletter!" checkbox.
      */
@@ -92,6 +96,7 @@ public class SignupPage {
         logger.info("Checkbox 'Newsletter' was checked");
         page.locator("#newsletter").check();
     }
+
     /**
      * Selects the "Receive special offers" checkbox.
      */
@@ -99,22 +104,23 @@ public class SignupPage {
         logger.info("Checkbox 'Offers' was selected");
         page.locator("#optin").check();
     }
+
     /**
      * Fills in all required address fields during signup.
      *
-     * @param firstName     user's first name
-     * @param lastName      user's last name
-     * @param company       company name
-     * @param address1      address line 1
-     * @param address2      address line 2
-     * @param country       selected country
-     * @param state         state or region
-     * @param city          city
-     * @param zipCode       postal code
-     * @param mobileNumber  contact phone number
+     * @param firstName    user's first name
+     * @param lastName     user's last name
+     * @param company      company name
+     * @param address1     address line 1
+     * @param address2     address line 2
+     * @param country      selected country
+     * @param state        state or region
+     * @param city         city
+     * @param zipCode      postal code
+     * @param mobileNumber contact phone number
      */
-    public void enterAddressInfo(String firstName, String lastName, String company,String address1,String address2,
-                                 String country,String state,String city,String zipCode,String mobileNumber){
+    public void enterAddressInfo(String firstName, String lastName, String company, String address1, String address2,
+                                 String country, String state, String city, String zipCode, String mobileNumber) {
 
 
         if (firstName == null || lastName == null || firstName.isEmpty() || lastName.isEmpty()) {
@@ -141,6 +147,7 @@ public class SignupPage {
                         "Address2: '{}', Country: '{}', State: '{}', City: '{}', Zipcode: '{}', Mobile Number: '{}' ", firstName, lastName,
                 company, address1, address2, country, state, city, zipCode, mobileNumber);
     }
+
     /**
      * Clicks the "Create Account" button to submit the signup form.
      */

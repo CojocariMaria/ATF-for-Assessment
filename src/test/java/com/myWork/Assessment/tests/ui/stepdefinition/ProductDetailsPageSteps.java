@@ -11,18 +11,18 @@ import java.util.Map;
 public class ProductDetailsPageSteps {
     private final ProductDetailsPage productDetailsPage;
 
-    public ProductDetailsPageSteps(CommonBase commonBase){
+    public ProductDetailsPageSteps(CommonBase commonBase) {
         Page page = commonBase.getPage();
         this.productDetailsPage = new ProductDetailsPage(page);
     }
 
     @Then("user is landed to product detail page")
     public boolean userIsLandedToProductDetailPage() {
-      return productDetailsPage.isProductDetailsPageVisible();
+        return productDetailsPage.isProductDetailsPageVisible();
     }
 
     @And("product information is visible")
-    public Map<String, String> productInformationIsVisible(){
+    public Map<String, String> productInformationIsVisible() {
         return productDetailsPage.getProductDetails();
     }
 }

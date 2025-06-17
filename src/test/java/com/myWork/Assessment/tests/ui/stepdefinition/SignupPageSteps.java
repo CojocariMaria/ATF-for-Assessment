@@ -2,9 +2,9 @@ package com.myWork.Assessment.tests.ui.stepdefinition;
 
 import com.microsoft.playwright.Page;
 import com.myWork.Assessment.tests.base.CommonBase;
-import com.myWork.Assessment.tests.ui.pages.SignupPage;
 import com.myWork.Assessment.tests.context.ContextKey;
 import com.myWork.Assessment.tests.context.ScenarioContext;
+import com.myWork.Assessment.tests.ui.pages.SignupPage;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import lombok.Data;
@@ -38,7 +38,7 @@ public class SignupPageSteps {
     @And("User creates password")
     public void userCreatesPassword() {
         String password = faker.internet().password();
-        scenarioContext.set(ContextKey.PASSWORD,password);
+        scenarioContext.set(ContextKey.PASSWORD, password);
         signupPage.fillPassword(password);
     }
 
@@ -51,9 +51,10 @@ public class SignupPageSteps {
         signupPage.selectNewsletter();
         signupPage.selectOffers();
     }
+
     @And("User fills the address information")
     public void userFillsTheAddressInformation() {
-        String firstName = scenarioContext.get(ContextKey.USERNAME,String.class);
+        String firstName = scenarioContext.get(ContextKey.USERNAME, String.class);
         String lastName = faker.name().lastName();
         String company = faker.company().name();
         String address1 = faker.address().fullAddress();
@@ -63,7 +64,7 @@ public class SignupPageSteps {
         String city = faker.address().city();
         String zipCode = faker.address().zipCode();
         String mobileNumber = faker.phoneNumber().phoneNumber();
-        signupPage.enterAddressInfo(firstName,lastName,company,address1,address2,country,state,city,zipCode,mobileNumber);
+        signupPage.enterAddressInfo(firstName, lastName, company, address1, address2, country, state, city, zipCode, mobileNumber);
     }
 
 
@@ -71,7 +72,6 @@ public class SignupPageSteps {
     public void clickTheCreateAccountButton() {
         signupPage.createAccountButton();
     }
-
 
 
 }

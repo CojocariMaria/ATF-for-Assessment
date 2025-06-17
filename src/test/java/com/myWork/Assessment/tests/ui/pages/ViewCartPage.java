@@ -25,6 +25,7 @@ public class ViewCartPage {
         this.product = page.locator("id='product-1'");
 
     }
+
     /**
      * Verifies whether the View Cart page is currently visible.
      *
@@ -39,6 +40,7 @@ public class ViewCartPage {
             return false;
         }
     }
+
     /**
      * Asserts that products with the given IDs are visible in the cart.
      *
@@ -47,13 +49,14 @@ public class ViewCartPage {
     public void assertProductsInCart(String... expectedProductIds) {
         for (String id : expectedProductIds) {
             Locator row = page.locator("tr#" + id);
-            if(row.isVisible()){
-                logger.info("Product with id {} is present in the cart",id);
-            }else {
-                logger.error("product with id {} not found in cart",id);
+            if (row.isVisible()) {
+                logger.info("Product with id {} is present in the cart", id);
+            } else {
+                logger.error("product with id {} not found in cart", id);
             }
         }
     }
+
     /**
      * Asserts that the price, quantity, and total fields are visible for a given product.
      *
@@ -69,7 +72,7 @@ public class ViewCartPage {
         Locator total = page.locator("tr#" + productId + " td.cart_total");
 
 
-        softAssert.assertTrue(description.isVisible(), "Description is not visible for "+ productId);
+        softAssert.assertTrue(description.isVisible(), "Description is not visible for " + productId);
         logger.info("Description is displayed for product '{}'", productId);
         softAssert.assertTrue(price.isVisible(), "Price is not visible for " + productId);
         logger.info("Price is displayed for product '{}'", productId);

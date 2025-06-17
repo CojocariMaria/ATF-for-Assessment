@@ -25,6 +25,7 @@ public class HomePage {
     private final Locator cartLink;
 
     private static final Logger logger = LoggerFactory.getLogger(HomePage.class);
+
     public HomePage(Page page) {
         this.page = page;
         this.signupLoginLink = page.getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName(" Signup / Login"));
@@ -34,6 +35,7 @@ public class HomePage {
         this.productsLink = page.getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName("Products"));
         this.cartLink = page.getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName("Cart"));
     }
+
     /**
      * Verifies whether the Home Page is visible by checking the presence of the slider component.
      *
@@ -41,7 +43,7 @@ public class HomePage {
      */
     public boolean isHomePageVisible() {
         logger.debug("Checking if Home Page is loaded...");
-        logger.debug("Current URL: {}" , page.url());
+        logger.debug("Current URL: {}", page.url());
         try {
             page.locator("[id='slider']").waitFor();
             return page.locator("[id='slider']").isVisible();
@@ -50,6 +52,7 @@ public class HomePage {
             return false;
         }
     }
+
     /**
      * Clicks the "Signup / Login" button.
      */
@@ -57,6 +60,7 @@ public class HomePage {
         logger.info("Click on [Signup / Login] button");
         signupLoginLink.click();
     }
+
     /**
      * Clicks the "Delete Account" button.
      */
@@ -64,6 +68,7 @@ public class HomePage {
         logger.info("Click on [Delete Account] button");
         deleteAccountButton.click();
     }
+
     /**
      * Clicks the "Logout" button.
      */
@@ -71,12 +76,14 @@ public class HomePage {
         logger.info("Click on [Logout] button");
         logoutButton.click();
     }
+
     /**
      * Clicks the "Products" navigation link.
      */
     public void clickProductsButton() {
         productsLink.click();
     }
+
     /**
      * Clicks the "Cart" navigation link.
      */

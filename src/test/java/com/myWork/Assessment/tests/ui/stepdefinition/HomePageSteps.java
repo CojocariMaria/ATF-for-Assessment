@@ -9,6 +9,7 @@ import io.cucumber.java.en.Then;
 import lombok.Data;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 import static org.testng.Assert.assertTrue;
 
 @Data
@@ -33,6 +34,7 @@ public class HomePageSteps {
         assertTrue(homePage.isHomePageVisible(), "Home page is not visible");
 
     }
+
     @And("user clicks on [Signup_Login] button")
     public void userClicksOnSignup_LoginButton() {
         logger.info("User clicks on [Signup / Login]");
