@@ -12,14 +12,11 @@ import lombok.extern.slf4j.Slf4j;
  * <p>
  * The {@code @Before} and {@code @After} methods are scoped to scenarios tagged with <b>@ui</b>.
  * <p>
- * Stores scenario metadata in {@link ScenarioContext} and manages Playwright lifecycle via {@link PlaywrightFactory}.
+ * Store scenario metadata in {@link ScenarioContext} and manages Playwright lifecycle via {@link PlaywrightFactory}.
  */
 @Slf4j
 public class TestHooks {
 
-    /**
-     * Default constructor. Required by Cucumber for hook instantiation.
-     */
     public TestHooks() {
     }
 

@@ -30,12 +30,6 @@ public class ConfigLoader {
         }
     }
 
-    /**
-     * Retrieves the value of a property by key as a String.
-     *
-     * @param key the name of the property
-     * @return the value of the property, or {@code null} if not found
-     */
     public static String getProperty(String key) {
         return properties.getProperty(key);
     }

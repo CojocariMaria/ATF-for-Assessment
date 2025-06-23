@@ -15,7 +15,6 @@ import org.slf4j.LoggerFactory;
 public class AccountCreatedPage {
     private Page page;
     private final Locator continueButton;
-
     private static final Logger logger = LoggerFactory.getLogger(AccountCreatedPage.class);
 
     public AccountCreatedPage(Page page) {

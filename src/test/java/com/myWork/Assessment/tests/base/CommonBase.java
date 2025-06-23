@@ -23,7 +23,6 @@ public class CommonBase {
         PlaywrightFactory.setup();
         this.page = PlaywrightFactory.getPage();
         log.debug("Playwright initialized");
-
         log.debug("Page is obtained from the PlaywrightFactory. Current URL: {}", page.url());
     }
 

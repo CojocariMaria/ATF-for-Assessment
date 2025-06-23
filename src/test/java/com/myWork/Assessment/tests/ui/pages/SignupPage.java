@@ -71,7 +71,7 @@ public class SignupPage {
      * <p>
      * Required keys: day, month, year
      *
-     * @param data map containing birth date components
+     * @param data map containing birthdate components
      */
     public void SelectDateOfBirth(Map<String, String> data) {
 

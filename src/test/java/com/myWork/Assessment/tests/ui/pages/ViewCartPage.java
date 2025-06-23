@@ -10,7 +10,7 @@ import org.testng.asserts.SoftAssert;
 /**
  * Page Object representing the "View Cart" page.
  * <p>
- * Provides methods to validate that products are correctly added to the cart
+ * Provides methods to validate that products are correctly added to the cart,
  * and their related information (description, price, quantity, total) is displayed.
  */
 @Data

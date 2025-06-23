@@ -7,7 +7,7 @@ import org.junit.runner.RunWith;
 
 
 /**
- * Entry point for running Cucumber scenarios with JUnit.
+ * Entry point for running Cucumber scenarios.
  * <p>
  * Configured via {@link CucumberOptions} to locate feature files and glue code,
  * and to enable readable console output.
